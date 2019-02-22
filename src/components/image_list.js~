@@ -1,0 +1,17 @@
+import React from 'react'
+import ImageListItem from './image_list_item';
+
+const ImageList = (props) => {
+		const imageItems = props.images.map((image, value) => {
+			return <ImageListItem key={value} image={image} {...props} />
+		});
+		
+	
+	return (
+			<div>
+				 {imageItems} 
+			</div>	
+		);
+}
+
+export default ImageList;

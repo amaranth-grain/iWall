@@ -1,0 +1,208 @@
+const imgList = {
+			img0:  {
+				path: "women.gif",
+				imageName: "img0",
+				duration: 10,
+				mediaType: "img",
+				sound: "",
+				background: ""
+			},
+			img1:  {
+				path: "bwn.gif",
+				imageName: "img1",
+				duration: 10,
+				mediaType: "img",
+				sound: "",
+				background: ""
+			},
+			img2:  {
+				path: "mount.gif",
+				imageName: "img2",
+				duration: 10,
+				mediaType: "img",
+				sound: "",
+				background: ""
+			},
+			img3:  {
+				path: "", // tree
+				imageName: "img3",
+				duration: 10,
+				mediaType: "img",
+				sound: "",
+				background: ""
+			},
+			img4:  {
+				path: "toastmasters.gif",
+				imageName: "img4",
+				duration: 10,
+				mediaType: "img",
+				sound: "",
+				background: ""
+			},
+			img5:  {
+				path: "",
+				imageName: "img5",
+				duration: 10,
+				mediaType: "img",
+				sound: "",
+				background: ""
+			},
+			img6:  {
+				path: "",
+				imageName: "img6",
+				duration: 9,
+				mediaType: "img",
+				sound: "",
+				background: ""
+			},
+			img7:  {
+				path: "greenteam.gif",
+				imageName: "img7",
+				duration: 10,
+				mediaType: "img",
+				sound: "",
+				background: ""
+			},
+			img8:  {
+				path: "pancakes.gif",
+				imageName: "img8",
+				duration: 10,
+				mediaType: "img",
+				sound: "",
+				background: ""
+			},
+			img9:  {
+				path: "Beakers.gif",
+				imageName: "img9",
+				duration: 10,
+				mediaType: "img",
+				sound: "",
+				background: ""
+			},
+			img10:  {
+				path: "sattext.gif",
+				imageName: "img10",
+				duration: 10,
+				mediaType: "img",
+				sound: "",
+				background: "",
+				background1: "static1.png",
+				background2: "static2.png",
+				background3: "static3.png"
+			},
+			img11:  {
+				path: "trophy.gif",
+				imageName: "img11",
+				duration: 10,
+				mediaType: "img",
+				sound: "",
+				background: ""
+			},
+			img12:  {
+				path: "",
+				imageName: "img12",
+				duration: 10,
+				mediaType: "img",
+				sound: "",
+				background: ""
+			},
+			img13:  {
+				path: "bus.gif",  //0
+				imageName: "img13",
+				duration: 10,
+				mediaType: "img",
+				sound: "",
+				background: ""
+			},
+			img14:  {
+				path: "helicopter.gif",
+				imageName: "img14",
+				duration: 10,
+				mediaType: "img",
+				sound: "",
+				background: ""
+			},
+			img15:  {
+				path: "heart.gif",//2
+				imageName: "img15",
+				duration: 10,
+				mediaType: "img",
+				sound: "",
+				background: "heartsLarge.png"
+			},
+			img16:  {
+				path: "", //3
+				imageName: "img16",
+				duration: 10,
+				mediaType: "img",
+				sound: "",
+				background: ""
+			},
+			img17:  {
+				path: "cloud.gif", //4
+				imageName: "img17",
+				duration: 9,
+				mediaType: "img",
+				sound: "",
+				background: ""
+			},
+			img18:  {
+				path: "", //5 
+				imageName: "img18",
+				duration: 10,
+				mediaType: "img",
+				sound: "",
+				background: ""
+			},
+			img19:  {
+				path: "autism.gif", //6
+				imageName: "img19",
+				duration: 10,
+				mediaType: "img",
+				sound: "",
+				background: ""
+			},
+			img20:  {
+				path: "hospital.gif", //7
+				imageName: "img20",
+				duration: 10,
+				mediaType: "img",
+				sound: "",
+				background: ""
+			},
+			img21:  {
+				path: "",
+				imageName: "img21",
+				duration: 10,
+				mediaType: "img",
+				sound: "",
+				background: ""
+			},
+			img22:  {
+				path: "",
+				imageName: "img22",
+				duration: 10,
+				mediaType: "img",
+				sound: "",
+				background: ""
+			},
+			img23:  {
+				path: "",
+				imageName: "img23",
+				duration: 10,
+				mediaType: "img",
+				sound: "",
+				background: ""
+			},
+			img24:  {
+				path: "ixp.gif",
+				imageName: "img24",
+				duration: 10,
+				mediaType: "img",
+				sound: "",
+				background: ""
+			},
+			
+}
+
+module.exports =  imgList;

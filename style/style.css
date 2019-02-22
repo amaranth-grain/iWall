@@ -1,0 +1,445 @@
+
+body {
+     background-color: black;
+     overflow: hidden;
+     margin: 0;
+     padding: 0;
+}
+
+.wall-area{
+    position: absolute;
+    width: 100%;
+    height: 50%;
+}
+
+.artboard-background {
+    max-width: 100%;
+    z-index: -99;
+    height: auto;
+    top: 8.95%;
+    position: absolute;
+    overflow:hidden;
+}
+
+.bubblegroup1 {
+  max-width: 100%;
+  z-index: -1;
+  height: auto;
+  position: absolute;
+  top: 9%;
+  overflow:hidden;
+	-webkit-animation: fade 30s linear forwards infinite;
+     animation: fade 30s linear forwards infinite ;
+}
+
+.bubblegroup2 {
+  max-width: 100%;
+  z-index: -1;
+  height: auto;
+  position: absolute;
+  top: 9%;
+  overflow:hidden;
+	-webkit-animation: fade 30s linear forwards infinite;
+     animation: fade 30s linear forwards infinite ;
+     animation-delay: 7.5s;
+}
+
+.bubblegroup3 {
+  max-width: 100%;
+  z-index: -1;
+  height: auto;
+  position: absolute;
+  top: 9%;
+  overflow:hidden;
+	-webkit-animation: fade 30s linear forwards infinite;
+     animation: fade 30s linear forwards infinite ;
+     animation-delay: 15s;
+}
+
+.ic {
+  position: absolute;
+  left: 37.2%;
+  top: 44.8%;
+  width: 1.4%;
+  z-index: -1;
+}
+
+#people {
+    top: 0;
+    position: relative;
+    max-width: 100%;
+    z-index: -98;
+    height: auto;
+}
+
+#audio {
+	width: 0;
+	height: 0;
+	border: 0;
+}
+
+img.individual-item{
+    position: absolute;
+}
+
+img.individual-item.hide {
+    visibility: hidden;
+}
+
+.hidden {
+	display: none;
+}
+
+.imageBackground {
+	background-color: red;
+	padding: 10px;
+}
+
+.img0 {
+    position: absolute;
+    left: 45%;
+    top: 66%;
+    width: 11%;
+    z-index: 2;
+    /* opacity: 0.9; */
+}
+
+.img1 {
+    position: absolute;
+    left: 43.2%;
+    top: 96%;
+    width: 7%;
+    background-color: white;
+    padding-bottom: 30px;
+    padding-left: 4px;
+    padding-right: 12px;
+    /* opacity: 0.9; */
+}
+
+.img2 {
+    position: absolute;
+    left: 55.95%;
+    top: 67.9%;
+    width: 11.8%;
+    background-color: white;
+    padding-right: 52px;
+    z-index: 3;
+    /* opacity: 0.9; */
+}
+
+.img3 {
+    position: absolute;
+    left: 35.7%;
+    top: 28.74%;
+    width: 12.1%;
+    background-color: white;
+    padding-left: 19px;
+    padding-bottom: 69px;
+    /* opacity: 0.9; */
+}
+
+.img4 {
+    position: absolute;
+    left: 42.1%;
+    top: 17.7%;
+    width: 8.3%;
+    /* opacity: 0.9; */
+}
+
+.img5 {
+    position: absolute;
+    left: -2.95%;
+    top: 69.12%;
+    width: 20.2%;
+    background-color: white;
+    padding-left: 75px;
+    /* opacity: 0.9; */
+}
+
+.img6 {
+    position: absolute;
+    left: 25.30%;
+    width: 7.84%;
+    top: 9%;
+    background-color: white;
+    padding-left: 40px;
+    padding-right: 66px;
+    padding-bottom: 82px;
+    z-index: 2;
+    /* opacity: 0.9; */
+}
+
+.img7 {
+    position: absolute;
+    left: 17.2%;
+    top: 102.6%;
+    width: 10.8%;
+    background-color: white;
+    padding-right: 2px;
+    /* opacity: 0.9; */
+}
+
+.img8 {
+	position: absolute;
+	left: 24.5%;
+	top: 70.9%;
+	width: 10%;
+	height: 33%;
+  /* opacity: 0.9; */
+}
+
+.img9 {
+	position: absolute;
+    top: 42.9%;
+    left:-0.6%;
+    background-color: white;
+    width: 9.55%;
+    padding-right: 11px;
+    padding-top: 33px;
+    /* opacity: 0.9; */
+}
+
+.img10 {
+    position: absolute;
+    left: 16%;
+    top: 15.5%;
+    width: 10%;
+    /* opacity: 0.9; */
+}
+
+.img11 {
+    position: absolute;
+    top: 69.3%;
+    left: 0.7%;
+    width: 13%;
+    height: 28%;
+    background-color: white;
+    padding-bottom: 35px;
+    /* padding-right: 90px; */
+    padding-left: 45px;
+    /* opacity: 0.9; */
+}
+
+.img12 {
+
+}
+
+.img13 {
+    position: absolute;
+    left: 61.3%;
+    top: 92.1%;
+    width: 14.0%;
+    z-index: 2;
+    /* opacity: 0.9; */
+}
+
+.img14 {
+    position: absolute;
+    left: 67.2%;
+    top: 64.7%;
+    width: 10%;
+    background-color: white;
+    padding-left: 55px;
+    /* opacity: 0.9; */
+}
+
+.img15 {
+    position: absolute;
+    left: 81.2%;
+    top: 57.7%;
+    width: 10.4%;
+    /* opacity: 0.9; */
+}
+
+.img16 {
+   position: absolute;
+   left: 61%;
+  top: 45%;
+  width: 14.8%;
+  background-color: white;
+  padding-bottom: 0px;
+  opacity: 0.9;
+}
+
+.img17 {
+	position: absolute;
+    left: 72.5%;
+    top: 9%;
+    width: 12%;
+    padding-bottom: 64px;
+    /* padding-right: 16px; */
+    background-color: white;
+    /* opacity: 0.9; */
+}
+
+.img18 {
+  position: absolute;
+  left: 82.5%;
+  top: 94.7%;
+  width: 15.6%;
+  background-color: white;
+  padding-right: 13px;
+    /* opacity: 0.9; */
+}
+
+.img19 {
+    position: absolute;
+    left: 87.5%;
+    top: 13.2%;
+    width: 13%;
+    background-color: white;
+    padding-bottom: 34px;
+    /* opacity: 0.9; */
+}
+
+.img20 {
+    position: absolute;
+    left: 75.7%;
+    top: 67.3%;
+    width: 7.5%;
+    height: 33.7%;
+    background-color: white;
+    padding-top: 21px;
+    padding-left: 33px;
+    /* opacity: 0.9; */
+}
+
+.img21 {
+
+}
+
+.img22 {
+
+}
+
+.img23 {
+    position: absolute;
+    left: 39.3%;
+    top: 68%;
+    width: 19.8%;
+    background-color: white;
+    padding-bottom: 43px;
+    z-index: 4;
+    /* opacity: 0.9; */
+}
+
+.img24 {
+	 position: absolute;
+    left: 61%;
+    top: 18%;
+    width: 11.8%;
+    background-color: white;
+    padding-bottom: 26px;
+    /* opacity: 0.9; */
+}
+.fade {
+      -webkit-animation: fadeinout 10s linear forwards;
+    		animation: fadeinout 10s linear forwards;
+}
+
+.fade1 {
+      -webkit-animation: fadeinout1 16s linear forwards;
+    		animation: fadeinout1 16s linear forwards;
+}
+
+.backgroundfade {
+     -webkit-animation: backgroundfade 10s linear forwards;
+    		animation: backgroundfade 10s linear forwards;
+}
+
+.sat {
+	position: absolute;
+	width: 26.6%;
+  top: 9%;
+}
+
+.sat1 {
+	-webkit-animation: sat1 10s linear forwards;
+    		animation: sat1 10s linear forwards;
+}
+
+.sat2 {
+	-webkit-animation: sat2 10s linear forwards;
+    		animation: sat2 10s linear forwards;
+}
+
+.sat3 {
+	-webkit-animation: sat3 10s linear forwards;
+    		animation: sat3 10s linear forwards;
+}
+
+.heartsLarge {
+	position: absolute;
+	width: 26.5%;
+   left: 71.1%;
+   top: 24%;
+}
+
+.labs{
+  /* left: 38.5%;
+  top: 9%;
+  width: 10.4%;
+  background-color: white;
+  padding-bottom: 15px;
+  /* opacity: 0.9; */
+  position: absolute;
+    top: 9%;
+    left: 60.8%;
+    width: 9.8%;
+    background-color: white;
+    padding-bottom: 26px;
+    /* opacity: 0.9; */
+}
+
+@-webkit-keyframes fadeinout {
+  0%,100% { opacity: 0; }
+  10%, 90% { opacity: 0.9 }
+  25%, 50%, 75% { opacity: 1; }
+}
+
+@keyframes fadeinout {
+    0%,100% { opacity: 0; }
+  5%, 90% { opacity: 0.9 }
+  25%, 50%, 75% { opacity: 1; }
+}
+
+
+@-webkit-keyframes fadeinout1 {
+  0%,100% { opacity: 0; }
+  10%, 98% { opacity: 0.9 }
+  25%, 50%, 75% { opacity: 1; }
+}
+
+@keyframes fadeinout1 {
+    0%,100% { opacity: 0; }
+  5%, 98% { opacity: 0.9 }
+  25%, 50%, 75% { opacity: 1; }
+}
+
+@keyframes fade {
+	0%,50%,100% { opacity: 0; }
+	25% { opacity: 1;}
+}
+
+@keyframes backgroundfade {
+	0%,100% { opacity: 0; }
+	50% { opacity: 1;}
+}
+
+@keyframes sat1 {
+	0%,3%,6%,9%,12%,15%,18%,21%,24%,27%,30%,33%,36%,39%,42%,45%,48%,51%,54%,57%,60%,63%,66%,69%,72%,75%,78%,81%,84%,87%,90%,93%,96%,99%{ opacity: 1; }
+	1%,4%,7%,10%,13%,16%,19%,22%,25%,28%,31%,34%,37%,40%,43%,46%,49%,52%,55%,58%,61%,64%,67%,70%,73%,76%,79%,82%,85%,88%,91%,94%,97%,100% { opacity: 0;}
+}
+
+@keyframes sat2 {
+	1%,4%,7%,10%,13%,16%,19%,22%,25%,28%,31%,34%,37%,40%,43%,46%,49%,52%,55%,58%,61%,64%,67%,70%,73%,76%,79%,82%,85%,88%,91%,94%,97%,100%  { opacity: 1; }
+	2%,5%,8%,11%,14%,17%,20%,23%,26%,29%,32%,35%,38%,41%,44%,47%,50%,53%,56%,59%,62%,65%,68%,71%,74%,77%,80%,83%,86%,89%,92%,95%,98% { opacity: 0;}
+}
+
+@keyframes sat3 {
+	2%,5%,8%,11%,14%,17%,20%,23%,26%,29%,32%,35%,38%,41%,44%,47%,50%,53%,56%,59%,62%,65%,68%,71%,74%,77%,80%,83%,86%,89%,92%,95%,98% { opacity: 1; }
+	0%,3%,6%,9%,12%,15%,18%,21%,24%,27%,30%,33%,36%,39%,42%,45%,48%,51%,54%,57%,60%,63%,66%,69%,72%,75%,78%,81%,84%,87%,90%,93%,96%,99%{ opacity: 0;}
+}
+
+
+}

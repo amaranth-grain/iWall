@@ -1,0 +1,13 @@
+import React from 'react';
+//import landscape_img from '../../assets/images/after-vinyl---export-projections.jpg';
+import landscape_img from '../../assets/images/Background.jpg';
+
+const Background = () => {
+	return (
+		<div >
+			<img src={ landscape_img } className="artboard-background"  />
+		</div>
+	);
+}
+
+export default Background;
