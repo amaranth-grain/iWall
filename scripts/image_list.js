@@ -40,10 +40,10 @@ const imgList = {
 				background: ""
 			},
 			img5:  {
-				path: "dshop.gif", //dshop
+				path: "dshop.mp4", //dshop
 				imageName: "img5",
 				duration: 16,
-				mediaType: "img",
+				mediaType: "mp4",
 				sound: "d-shop - Robot Sound.mp3",
 				background: ""
 			},

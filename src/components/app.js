@@ -64,6 +64,7 @@ export default class App extends Component {
 			}
 
 			if (!this.state.images.find(image => image.imageName === img.imageName) && this.state.images.length < 3) {
+				console.log("Touched");
 				this.setState({ images: [...this.state.images, img] });
 			}
 		}
