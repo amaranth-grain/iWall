@@ -88,7 +88,11 @@ export default class App extends Component {
 			}
 
 			if (!this.state.images.find(image => image.imageName === img.imageName) && this.state.images.length < 3) {
-				this.setState({ images: [...this.state.images, img] });
+				this.setState({
+					images: [...this.state.images, img],
+					// for testing only, comment out when in production
+					keyboardInput: ""
+				});
 			}
 		}
 
