@@ -13,19 +13,43 @@ export default class App extends Component {
 			super(props);
 			this.state = {
 					images: [],
-					endpoint: "http://127.0.0.1:4001"
+					endpoint: "http://127.0.0.1:4001",
+					keyboardInput: ""
 				};
 		}
 
 		componentDidMount() {
-			const { endpoint } = this.state;
-			const socket = socketIOClient(endpoint);
-			socket.on("test", data => {
-				this.convertSerialPortDataToJSX(data);
-			});
+			// const { endpoint } = this.state;
+			// const socket = socketIOClient(endpoint);
+			// socket.on("test", data => {
+			// 	this.convertSerialPortDataToJSX(data);
+			// });
 		}
 
-		addImage = (img) => {
+		handleKeyboardInput = event => {
+
+			console.log(event.key);
+
+			if (event.key == "Enter") {
+				this.testAddImage(this.state.keyboardInput);
+				return;
+			}
+
+			this.setState({
+				keyboardInput: this.state.keyboardInput + event.key
+			})
+		}
+
+		testAddImage = key => {
+			const imgData = imgList[`img${key}`];
+			this.addImage(imgData);
+		}
+
+		componentWillMount() {
+			window.addEventListener('keydown', this.handleKeyboardInput.bind(this));
+		}
+
+		addImage = img => {
 			//hospital collides with helicopter and heart
 			if(img.imageName === "img20" && this.state.images.find(image => (image.imageName === "img14" || image.imageName === "img15"))){
 				return;
@@ -94,6 +118,7 @@ export default class App extends Component {
     			<div className="wall-area">
      		 		<Background />
      		 		{imageItems}
+					<div>Input image #: {this.state.keyboardInput}</div>
      		 	</div>
    		);
 		}
