@@ -27,23 +27,19 @@ export default class App extends Component {
 		}
 
 		handleKeyboardInput = event => {
-
-			console.log(event.key);
-
 			if (event.key == "Enter") {
 				this.testAddImage(this.state.keyboardInput);
-				return;
-			}
-
-			if (event.key == "Backspace") {
+			} else if (event.key == "Backspace") {
 				this.setState({
 					keyboardInput: ""
 				})
+			} else {
+				this.setState({
+					keyboardInput: this.state.keyboardInput + event.key
+				})
 			}
 
-			this.setState({
-				keyboardInput: this.state.keyboardInput + event.key
-			})
+			console.log(this.state.keyboardInput);
 		}
 
 		testAddImage = key => {
