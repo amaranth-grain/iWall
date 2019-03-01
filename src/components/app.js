@@ -35,6 +35,12 @@ export default class App extends Component {
 				return;
 			}
 
+			if (event.key == "Backspace") {
+				this.setState({
+					keyboardInput: ""
+				})
+			}
+
 			this.setState({
 				keyboardInput: this.state.keyboardInput + event.key
 			})
