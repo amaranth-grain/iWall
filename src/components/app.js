@@ -64,14 +64,14 @@ export default class App extends Component {
 			}
 
 			if (!this.state.images.find(image => image.imageName === img.imageName) && this.state.images.length < 3) {
-				console.log("Touched");
 				this.setState({ images: [...this.state.images, img] });
 			}
 		}
 
+		//comment contents for componenet placement
 		removeImage = (img) => {
-			const newImages = this.state.images.filter(image => image.imageName !== img.imageName);
-			this.setState({ images: newImages });
+			// const newImages = this.state.images.filter(image => image.imageName !== img.imageName);
+			// this.setState({ images: newImages });
 		}
 
 		convertSerialPortDataToJSX = (data) => {
