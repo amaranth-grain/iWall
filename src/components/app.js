@@ -28,8 +28,10 @@ export default class App extends Component {
 
 		handleKeyboardInput = event => {
 			if (event.key == "Enter") {
+				console.log(this.state.keyboardInput);
 				this.testAddImage(this.state.keyboardInput);
 			} else if (event.key == "Backspace") {
+				console.log("Input Cleared")
 				this.setState({
 					keyboardInput: ""
 				})
@@ -38,8 +40,6 @@ export default class App extends Component {
 					keyboardInput: this.state.keyboardInput + event.key
 				})
 			}
-
-			console.log(this.state.keyboardInput);
 		}
 
 		testAddImage = key => {
