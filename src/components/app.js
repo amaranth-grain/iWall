@@ -95,6 +95,11 @@ export default class App extends Component {
 					// for testing only, comment out when in production
 					keyboardInput: ""
 				});
+			} else {
+				this.setState({
+					// for testing only, comment out when in production
+					keyboardInput: ""
+				});
 			}
 		}
 
