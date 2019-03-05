@@ -13,7 +13,8 @@ export default class App extends Component {
 			super(props);
 			this.state = {
 					images: [],
-					endpoint: "http://127.0.0.1:4001"
+					endpoint: "http://127.0.0.1:4001",
+					keyboardInput: ""
 				};
 		}
 
@@ -25,7 +26,32 @@ export default class App extends Component {
 			});
 		}
 
-		addImage = (img) => {
+		handleKeyboardInput = event => {
+			if (event.key == "Enter") {
+				console.log(this.state.keyboardInput);
+				this.testAddImage(this.state.keyboardInput);
+			} else if (event.key == "Backspace") {
+				console.log("Input Cleared")
+				this.setState({
+					keyboardInput: ""
+				})
+			} else {
+				this.setState({
+					keyboardInput: this.state.keyboardInput + event.key
+				})
+			}
+		}
+
+		testAddImage = key => {
+			const imgData = imgList[`img${key}`];
+			this.addImage(imgData);
+		}
+
+		componentWillMount() {
+			window.addEventListener('keydown', this.handleKeyboardInput.bind(this));
+		}
+
+		addImage = img => {
 			//hospital collides with helicopter and heart
 			if(img.imageName === "img20" && this.state.images.find(image => (image.imageName === "img14" || image.imageName === "img15"))){
 				return;
@@ -64,7 +90,16 @@ export default class App extends Component {
 			}
 
 			if (!this.state.images.find(image => image.imageName === img.imageName) && this.state.images.length < 3) {
-				this.setState({ images: [...this.state.images, img] });
+				this.setState({
+					images: [...this.state.images, img],
+					// for testing only, comment out when in production
+					keyboardInput: ""
+				});
+			} else {
+				this.setState({
+					// for testing only, comment out when in production
+					keyboardInput: ""
+				});
 			}
 		}
 
@@ -94,6 +129,7 @@ export default class App extends Component {
     			<div className="wall-area">
      		 		<Background />
      		 		{imageItems}
+					<div>Input image #: {this.state.keyboardInput}</div>
      		 	</div>
    		);
 		}
