@@ -59,7 +59,7 @@ body {
 /* Large cloud above mountain */
 .cloud1 {
     position: absolute;
-    height: 200px;
+    height: 50px;
     width: auto;
     animation-name: cloud-drift1;
     animation-duration: 30s;
@@ -69,7 +69,7 @@ body {
 /* Large cloud above mountain */
 .cloud5 {
     position: absolute;
-    height: 120px;
+    height: 30px;
     width: auto;
     animation-name: cloud-drift5;
     animation-duration: 30s;
@@ -79,7 +79,7 @@ body {
 /* Small cloud above mountain */
 .cloud2 {
     position: absolute;
-    height: 150px;
+    height: 37px;
     width: auto;
     animation-name: cloud-drift2;
     animation-duration: 30s;
@@ -89,7 +89,7 @@ body {
 /* Small cloud next to helicopter */
 .cloud3 {
     position: absolute;
-    height: 100px;
+    height: 25px;
     width: auto;
     animation-name: cloud-drift3;
     animation-duration: 30s;
@@ -98,7 +98,7 @@ body {
 }
 .cloud4 {
     position: absolute;
-    height: 180px;
+    height: 45px;
     width: auto;
     animation-name: cloud-drift4;
     animation-duration: 30s;
