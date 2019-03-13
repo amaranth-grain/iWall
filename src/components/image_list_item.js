@@ -25,7 +25,7 @@ class ImageListItem extends Component {
 			const satBackground1 = `../../assets/images/people/${image.background1}`;
 			const satBackground2 = `../../assets/images/people/${image.background2}`;
 			const satBackground3 = `../../assets/images/people/${image.background3}`;
-			let css = `individual-item ${image.imageName} fade`;
+			let css = `individual-item ${image.imageName}`;
 			let css1 = `individual-item heartsLarge backgroundfade`;
 			const sat1 = `individual-item sat sat1`;
 			const sat2 = `individual-item sat sat2`;
@@ -36,6 +36,7 @@ class ImageListItem extends Component {
 				media = (
 					<video id={image.imageName} ref="vidRef" width="320" height="240" autoPlay className={css}>
 						<source src={ imagePath } type="video/mp4" />
+						<iframe src={ `../../assets/sounds/${image.sound}`} allow="autoplay" id="audio"></iframe>
 					</video>
 				);
 			} else if (image.path === "sattext.gif") {

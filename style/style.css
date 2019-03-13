@@ -146,12 +146,13 @@ img.individual-item.hide {
     /* opacity: 0.9; */
 }
 
+/* d-shop*/
 .img5 {
     position: absolute;
     left: -2.95%;
-    top: 69.12%;
+    top: 64.5%;
     width: 20.2%;
-    background-color: white;
+    background-color: #ffffff00;
     padding-left: 75px;
     /* opacity: 0.9; */
 }
