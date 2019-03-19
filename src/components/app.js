@@ -14,7 +14,8 @@ export default class App extends Component {
 			this.state = {
 					images: [],
 					endpoint: "http://127.0.0.1:4001",
-					keyboardInput: ""
+					keyboardInput: "",
+					showAnimation: true
 				};
 		}
 
@@ -40,6 +41,12 @@ export default class App extends Component {
 					keyboardInput: this.state.keyboardInput + event.key
 				})
 			}
+		}
+
+		handleShowAnimations() {
+			this.state({
+				// showAnimation = !showAnimation;
+			});
 		}
 
 		testAddImage = key => {
@@ -122,12 +129,12 @@ export default class App extends Component {
 		render() {
 			const imageItems = this.state.images.map((image, index) => {
 				const imageKey = image.imageName;
-				return <ImageListItem key={imageKey}  image={image} removeImage={this.removeImage} />
+				return <ImageListItem key={imageKey}  image={image} removeImage={this.removeImage} showAnimation={showAnimation}/>
 			});
 
 			return (
     			<div className="wall-area">
-     		 		<Background />
+     		 		<Background showAnimation={this.state.showAnimation}/>
      		 		{imageItems}
 					<div>Input image #: {this.state.keyboardInput}</div>
      		 	</div>

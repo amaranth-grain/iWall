@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 // import landscape_img from '../../assets/images/after-vinyl---export-projections.jpg';
 //import landscape_img from '../../assets/images/Background.jpg';
 import landscape_img from '../../assets/images/projectednew.jpg';
@@ -20,26 +20,40 @@ import mario from '../../assets/images/anim/mario.png';
 import yoshi from '../../assets/images/anim/yoshi.png';
 
 
-const Background = () => {
-	return (
-		<div >
-			<img src={ landscape_img } className="artboard-background"  />
-			<img src={ bubbles1 } className="bubblegroup1"  />
-			<img src={ bubbles2 } className="bubblegroup2"  />
-			<img src={ bubbles3 } className="bubblegroup3"  />
-			<img src={ ic } className="ic"  />
-			<img src= { cloud1 } className="cloud1"/>
-			<img src= { cloud1 } className="cloud5"/>
-			<img src= { cloud1 } className="cloud2"/>
-			<img src= { cloud1 } className="cloud3"/>
-			<img src= { cloud1 } className="cloud4"/>
-			<img src= { elevator } className="elevator" />
-			<img src= { flag } className="flag" />
-			<img src= { wave } className="wave" />
-			<img src= { mario } className="mario" />
-			<img src= { yoshi } className="yoshi" />
-		</div>
-	);
+class Background extends Component {
+	constructor(props) {
+		super(props);
+	}
+
+	render() {
+		const showAnimations = this.props.showAnimation;
+
+		return (
+			<div>
+				<div>
+					<img src={ landscape_img } className="artboard-background"  />
+					<img src={ bubbles1 } className="bubblegroup1"  />
+					<img src={ bubbles2 } className="bubblegroup2"  />
+					<img src={ bubbles3 } className="bubblegroup3"  />
+					<img src={ ic } className="ic"  />
+					<img src= { elevator } className="elevator" />
+					<img src= { flag } className="flag" />
+					<img src= { wave } className="wave" />
+				</div>
+				{showAnimations === true && 
+					<div>
+						<img src= { cloud1 } className="cloud1"/>
+						<img src= { cloud1 } className="cloud5"/>
+						<img src= { cloud1 } className="cloud2"/>
+						<img src= { cloud1 } className="cloud3"/>
+						<img src= { cloud1 } className="cloud4"/>
+						<img src= { mario } className="mario" />
+						<img src= { yoshi } className="yoshi" />
+					</div>
+				}
+			</div>
+		);
+	}
 }
 
 export default Background;

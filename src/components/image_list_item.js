@@ -20,6 +20,7 @@ class ImageListItem extends Component {
 
 		render() {
 			const image = this.props.image;
+			const showAnimations = this.props.showAnimations;
 			const imagePath = `../../assets/images/people/${image.path}`;
 			const imageBackground = `../../assets/images/people/${image.background}`;
 			const satBackground1 = `../../assets/images/people/${image.background1}`;
@@ -32,7 +33,10 @@ class ImageListItem extends Component {
 			const sat3 = `individual-item sat sat3`;
 			let media;
 
-			if (image.mediaType === "mp4") {
+			if (image.path === "labs.gif") {
+				this.setState({
+				});
+			} else if (image.mediaType === "mp4") {
 				media = (
 					<video id={image.imageName} ref="vidRef" width="320" height="240" autoPlay className={css}>
 						<source src={ imagePath } type="video/mp4" />
