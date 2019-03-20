@@ -18,7 +18,8 @@ import wave from '../../assets/images/anim/wave.png';
 // FOR FUN
 //import mario from '../../assets/images/anim/mario.png';
 //import yoshi from '../../assets/images/anim/yoshi.png';
-
+// import mario from '../../assets/images/anim/mario.png';
+// import yoshi from '../../assets/images/anim/yoshi.png';
 
 const Background = () => {
 	return (
