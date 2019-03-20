@@ -12,10 +12,22 @@ class ImageListItem extends Component {
 		componentDidMount() {
 			const { removeImage, image, handleShowAnimations } = this.props;
 			setTimeout(() => { removeImage(image)}, image.duration*1000);
+
+			console.log('componentDidMount')
+
+			var vid = document.getElementById(image.imageName);
+			vid.onended = function() {
+				alert("The video has ended");
+				console.log('please')
+			};
 		}
 
 		shouldComponentUpdate() {
 			return false;
+		}
+
+		componentDidUpdate() {
+			console.log('END');
 		}
 
 		render() {
@@ -35,16 +47,11 @@ class ImageListItem extends Component {
 			if (image.mediaType === "mp4") {
 				console.log(image.imageName);
 				media = (
-					<video id={image.imageName} ref="vidRef" width="320" height="240" autoPlay className={css} onEnded={this.props.handleShowAnimations()}>
+					<video id={image.imageName} ref="vidRef" width="320" height="240" autoPlay className={css}>
 						<source src={ imagePath } type="video/mp4" />
 						<iframe src={`../../assets/sounds/${image.sound}`} allow="autoplay" id="audio"></iframe>
 					</video>
 				);
-
-				// document.getElementById(this.props.image.imageName).addEventListener('ended', myHandler, false);
-    			// 	function myHandler(e) {
-				// 		this.props.view();
-    			// 	}
 			} else if (image.path === "sattext.gif") {
 				media = (
 					<div>
@@ -84,10 +91,10 @@ class ImageListItem extends Component {
 			}
 
 			return (
- 				<div>
+				<div>
 					{media}
 				</div>
-   		 	);
+			);
    	}
 }
 export default ImageListItem;
