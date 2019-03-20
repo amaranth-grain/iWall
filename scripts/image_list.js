@@ -72,10 +72,10 @@ const imgList = {
 				background: ""
 			},
 			img9:  {
-				path: "Beakers.gif",
+				path: "beakers.mp4",
 				imageName: "img9",
 				duration: 10,
-				mediaType: "img",
+				mediaType: "mp4",
 				sound: "Beaker - Bubbles.mp3",
 				background: ""
 			},

@@ -312,12 +312,10 @@ img.individual-item.hide {
 
 .img9 {
 	position: absolute;
-    top: 42.9%;
-    left:-0.6%;
-    background-color: white;
+    top: 39%;
+    left:-0.3%;
+    background-color: #ffffff00;
     width: 9.55%;
-    padding-right: 11px;
-    padding-top: 33px;
     /* opacity: 0.9; */
 }
 
