@@ -135,7 +135,7 @@ body {
     position: absolute;
     top: 120%;
     left: 94%;
-    width: 51px; 
+    width: 51px;
     animation-name: wave-movement;
     animation-duration: 6s;
     animation-iteration-count: infinite;
@@ -270,8 +270,8 @@ img.individual-item.hide {
 /* d-shop*/
 .img5 {
     position: absolute;
-    left: -2.95%;
-    top: 64.5%;
+    left: -2.6%;
+    top: 66.5%;
     width: 20.2%;
     background-color: #ffffff00;
     padding-left: 75px;
