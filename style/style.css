@@ -524,6 +524,22 @@ img.individual-item.hide {
     50%  {left:74%; top:50%;}
     100% {left:71%; top:50%;}
 }
+.swing {
+  position: absolute;
+  height: 92px;
+  width: auto;
+  animation-name: swing-walk;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in;
+}
+@keyframes swing-walk {
+    0%   {left:63%; top:98%; transform: rotateY(0deg);}
+    49%   {transform: rotateY(0deg);}
+    50%  {left:63%; top:98%; transform: rotateY(180deg);}
+    99%  {transform: rotateY(180deg);}
+    100% {left:63%; top:98%; transform: rotateY(0deg);}
+}
 
 @-webkit-keyframes fadeinout {
   0%,100% { opacity: 0; }
