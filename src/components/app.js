@@ -17,6 +17,8 @@ export default class App extends Component {
 					keyboardInput: "",
 					showAnimation: true
 				};
+
+			this.handleShowAnimations = this.handleShowAnimations.bind(this);
 		}
 
 		componentDidMount() {
@@ -44,9 +46,11 @@ export default class App extends Component {
 		}
 
 		handleShowAnimations() {
-			this.state({
-				// showAnimation = !showAnimation;
+			this.setState({
+				showAnimation: false
 			});
+
+			console.log('handleShowAnimations() called');
 		}
 
 		testAddImage = key => {
@@ -129,7 +133,7 @@ export default class App extends Component {
 		render() {
 			const imageItems = this.state.images.map((image, index) => {
 				const imageKey = image.imageName;
-				return <ImageListItem key={imageKey}  image={image} removeImage={this.removeImage} showAnimation={showAnimation}/>
+				return <ImageListItem key={imageKey}  image={image} removeImage={this.removeImage} handleShowAnimations={this.handleShowAnimations}/>
 			});
 
 			return (

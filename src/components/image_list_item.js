@@ -10,7 +10,7 @@ class ImageListItem extends Component {
 		}
 
 		componentDidMount() {
-			const { removeImage, image } = this.props;
+			const { removeImage, image, handleShowAnimations } = this.props;
 			setTimeout(() => { removeImage(image)}, image.duration*1000);
 		}
 
@@ -20,7 +20,6 @@ class ImageListItem extends Component {
 
 		render() {
 			const image = this.props.image;
-			const showAnimations = this.props.showAnimations;
 			const imagePath = `../../assets/images/people/${image.path}`;
 			const imageBackground = `../../assets/images/people/${image.background}`;
 			const satBackground1 = `../../assets/images/people/${image.background1}`;
@@ -33,15 +32,19 @@ class ImageListItem extends Component {
 			const sat3 = `individual-item sat sat3`;
 			let media;
 
-			if (image.path === "labs.gif") {
-				this.setState({
-				});
-			} else if (image.mediaType === "mp4") {
+			if (image.mediaType === "mp4") {
+				console.log(image.imageName);
 				media = (
-					<video id={image.imageName} ref="vidRef" width="320" height="240" autoPlay className={css}>
+					<video id={image.imageName} ref="vidRef" width="320" height="240" autoPlay className={css} onEnded={this.props.handleShowAnimations()}>
 						<source src={ imagePath } type="video/mp4" />
+						<iframe src={`../../assets/sounds/${image.sound}`} allow="autoplay" id="audio"></iframe>
 					</video>
 				);
+
+				// document.getElementById(this.props.image.imageName).addEventListener('ended', myHandler, false);
+    			// 	function myHandler(e) {
+				// 		this.props.view();
+    			// 	}
 			} else if (image.path === "sattext.gif") {
 				media = (
 					<div>
@@ -84,7 +87,7 @@ class ImageListItem extends Component {
  				<div>
 					{media}
 				</div>
-   		 );
+   		 	);
    	}
 }
 export default ImageListItem;
