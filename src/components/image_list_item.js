@@ -36,6 +36,7 @@ class ImageListItem extends Component {
 				media = (
 					<video id={image.imageName} ref="vidRef" width="320" height="240" autoPlay className={css}>
 						<source src={ imagePath } type="video/mp4" />
+						<iframe src={ `../../assets/sounds/${image.sound}`} allow="autoplay" id="audio"></iframe>
 					</video>
 				);
 			} else if (image.path === "sattext.gif") {
