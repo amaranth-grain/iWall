@@ -510,6 +510,20 @@ img.individual-item.hide {
     padding-bottom: 26px;
     /* opacity: 0.9; */
 }
+.guitarist {
+  position: absolute;
+  height: 170px;
+  width: auto;
+  animation-name: guitarist-moonwalk;
+  animation-duration: 9s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@keyframes guitarist-moonwalk {
+    0%   {left:71%; top:50%;}
+    50%  {left:74%; top:50%;}
+    100% {left:71%; top:50%;}
+}
 
 @-webkit-keyframes fadeinout {
   0%,100% { opacity: 0; }

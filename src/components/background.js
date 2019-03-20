@@ -14,6 +14,7 @@ import cloudFilled4 from '../../assets/images/anim/cloud_4_filled.png';
 import elevator from '../../assets/images/anim/Elevator.png';
 import flag from '../../assets/images/anim/Flag_Fill.png';
 import wave from '../../assets/images/anim/wave.png';
+import guitarist from '../../assets/images/people/guitarist.png';
 
 // FOR FUN
 //import mario from '../../assets/images/anim/mario.png';
@@ -37,6 +38,7 @@ const Background = () => {
 			<img src= { elevator } className="elevator" />
 			<img src= { flag } className="flag" />
 			<img src= { wave } className="wave" />
+			<img src= { guitarist } className="guitarist" />
 		</div>
 	);
 }
