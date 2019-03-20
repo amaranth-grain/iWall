@@ -11,23 +11,26 @@ class ImageListItem extends Component {
 
 		componentDidMount() {
 			const { removeImage, image, handleShowAnimations } = this.props;
-			setTimeout(() => { removeImage(image)}, image.duration*1000);
 
 			console.log('componentDidMount')
 
-			var vid = document.getElementById(image.imageName);
-			vid.onended = function() {
-				alert("The video has ended");
-				console.log('please')
-			};
+			// This condition should only happen for mp4's instead of timeout to restore the animations
+			if (image.mediaType === "mp4") {
+				var vid = document.getElementById(image.imageName);
+				console.log(vid);
+
+				vid.onended = function () {
+					console.log('Video has ended');
+					handleShowAnimations(true);
+				};
+			} else {
+				setTimeout(() => { removeImage(image)}, image.duration*1000);
+			}
+		
 		}
 
 		shouldComponentUpdate() {
 			return false;
-		}
-
-		componentDidUpdate() {
-			console.log('END');
 		}
 
 		render() {
@@ -44,8 +47,10 @@ class ImageListItem extends Component {
 			const sat3 = `individual-item sat sat3`;
 			let media;
 
-			if (image.mediaType === "mp4") {
+			// TODO: Replace with Chao's video instead of dshop.mp4
+			if (image.path === "dshop.mp4") {
 				console.log(image.imageName);
+				this.props.handleShowAnimations(false);
 				media = (
 					<video id={image.imageName} ref="vidRef" width="320" height="240" autoPlay className={css}>
 						<source src={ imagePath } type="video/mp4" />

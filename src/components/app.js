@@ -45,9 +45,9 @@ export default class App extends Component {
 			}
 		}
 
-		handleShowAnimations() {
+		handleShowAnimations = value => {
 			this.setState({
-				showAnimation: false
+				showAnimation: value
 			});
 
 			console.log('handleShowAnimations() called');
