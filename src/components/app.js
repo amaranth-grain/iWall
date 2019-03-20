@@ -104,8 +104,8 @@ export default class App extends Component {
 		}
 
 		removeImage = (img) => {
-			const newImages = this.state.images.filter(image => image.imageName !== img.imageName);
-			this.setState({ images: newImages });
+			// const newImages = this.state.images.filter(image => image.imageName !== img.imageName);
+			// this.setState({ images: newImages });
 		}
 
 		convertSerialPortDataToJSX = (data) => {

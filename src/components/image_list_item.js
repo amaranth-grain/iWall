@@ -25,7 +25,7 @@ class ImageListItem extends Component {
 			const satBackground1 = `../../assets/images/people/${image.background1}`;
 			const satBackground2 = `../../assets/images/people/${image.background2}`;
 			const satBackground3 = `../../assets/images/people/${image.background3}`;
-			let css = `individual-item ${image.imageName} fade`;
+			let css = `individual-item ${image.imageName}`;
 			let css1 = `individual-item heartsLarge backgroundfade`;
 			const sat1 = `individual-item sat sat1`;
 			const sat2 = `individual-item sat sat2`;

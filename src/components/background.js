@@ -12,12 +12,12 @@ import cloudFilled2 from '../../assets/images/anim/cloud_2_filled.png';
 import cloudFilled3 from '../../assets/images/anim/cloud_3_filled.png';
 import cloudFilled4 from '../../assets/images/anim/cloud_4_filled.png';
 import elevator from '../../assets/images/anim/Elevator.png';
-import flag from '../../assets/images/anim/Flag_Fill.png'; 
+import flag from '../../assets/images/anim/Flag_Fill.png';
 import wave from '../../assets/images/anim/wave.png';
 
 // FOR FUN
-import mario from '../../assets/images/anim/mario.png';
-import yoshi from '../../assets/images/anim/yoshi.png';
+//import mario from '../../assets/images/anim/mario.png';
+//import yoshi from '../../assets/images/anim/yoshi.png';
 
 
 const Background = () => {
@@ -36,8 +36,6 @@ const Background = () => {
 			<img src= { elevator } className="elevator" />
 			<img src= { flag } className="flag" />
 			<img src= { wave } className="wave" />
-			<img src= { mario } className="mario" />
-			<img src= { yoshi } className="yoshi" />
 		</div>
 	);
 }
