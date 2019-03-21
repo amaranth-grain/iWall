@@ -141,6 +141,50 @@ body {
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
+.wave2{
+    position: absolute;
+    width: 51px;
+    animation-name: wave2-movement;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.tree1{
+    position: absolute;
+    top: 36%;
+    left: 31.38%;
+    width: 24px;
+}
+.tree2{
+    position: absolute;
+    top: 38.2%;
+    left: 30.75%;
+    width: 24px;
+}
+.tree3{
+    position: absolute;
+    top: 43.4%;
+    left: 29.26%;
+    width: 24px;
+}
+.tree4{
+    position: absolute;
+    top: 41.4%;
+    left: 28.5%;
+    width: 27px;
+}
+.tree5{
+    position: absolute;
+    top: 38.8%;
+    left: 38.5%;
+    width: 31px;
+}
+.tree6{
+    position: absolute;
+    top: 41.8%;
+    left: 39.36%;
+    width: 31px;
+}
 @keyframes cloud-drift1 {
     0%   {left:30.2%; top:14.8%;}
     50%  {left:50.2%; top:14.8%;}
@@ -172,9 +216,14 @@ body {
     100% {left:36%; top:110%;}
 }
 @keyframes wave-movement {
-    0%   {left:94%; top:120%;}
-    50%  {left:96%; top:120%;}
-    100% {left:94%; top:120%;}
+    0%   {left:94%; top:119%;}
+    50%  {left:96%; top:119%;}
+    100% {left:94%; top:119%;}
+}
+@keyframes wave2-movement {
+    0%   {left:94.5%; top:121.5%;}
+    50%  {left:95.5%; top:121.5%;}
+    100% {left:94.5%; top:121.5%;}
 }
 
 .ic {
@@ -215,7 +264,7 @@ img.individual-item.hide {
 	background-color: red;
 	padding: 10px;
 }
-
+/* SAP building (women in management) */
 .img0 {
     position: absolute;
     left: 45%;
@@ -224,7 +273,7 @@ img.individual-item.hide {
     z-index: 2;
     /* opacity: 0.9; */
 }
-
+/*BWN Business Women's Network */
 .img1 {
     position: absolute;
     left: 43.2%;
@@ -236,7 +285,7 @@ img.individual-item.hide {
     padding-right: 12px;
     /* opacity: 0.9; */
 }
-
+/* Sea to Sky / Mountain */
 .img2 {
     position: absolute;
     left: 55.95%;
@@ -247,7 +296,7 @@ img.individual-item.hide {
     z-index: 3;
     /* opacity: 0.9; */
 }
-
+/*Tree: SAP Intern Committee / Spring into Service */
 .img3 {
     position: absolute;
     left: 35.7%;
@@ -258,7 +307,7 @@ img.individual-item.hide {
     padding-bottom: 69px;
     /* opacity: 0.9; */
 }
-
+/*Toastmasters / Megaphone */
 .img4 {
     position: absolute;
     left: 42.1%;
@@ -277,7 +326,7 @@ img.individual-item.hide {
     padding-left: 75px;
     /* opacity: 0.9; */
 }
-
+/* Bike to work */
 .img6 {
     position: absolute;
     left: 25.30%;
@@ -290,7 +339,7 @@ img.individual-item.hide {
     z-index: 2;
     /* opacity: 0.9; */
 }
-
+/* Green team / Trash can*/
 .img7 {
     position: absolute;
     left: 17.2%;
@@ -300,7 +349,7 @@ img.individual-item.hide {
     padding-right: 2px;
     /* opacity: 0.9; */
 }
-
+/* Pancake breakfasts / Thirsty Thursday */
 .img8 {
 	position: absolute;
 	left: 24.5%;
@@ -309,7 +358,7 @@ img.individual-item.hide {
 	height: 33%;
   /* opacity: 0.9; */
 }
-
+/* beaker */
 .img9 {
 	position: absolute;
     top: 39%;
@@ -318,7 +367,7 @@ img.individual-item.hide {
     width: 9.55%;
     /* opacity: 0.9; */
 }
-
+/* satellite */
 .img10 {
     position: absolute;
     left: 16%;
@@ -326,7 +375,7 @@ img.individual-item.hide {
     width: 10%;
     /* opacity: 0.9; */
 }
-
+/* Top 100 Employer / Trophy */
 .img11 {
     position: absolute;
     top: 69.3%;
@@ -362,7 +411,7 @@ img.individual-item.hide {
     padding-left: 55px;
     /* opacity: 0.9; */
 }
-
+/* Pride / heart */
 .img15 {
     position: absolute;
     left: 81.2%;
@@ -370,7 +419,7 @@ img.individual-item.hide {
     width: 10.4%;
     /* opacity: 0.9; */
 }
-
+/* SAP Labs Canada Rocks */
 .img16 {
    position: absolute;
    left: 61%;
@@ -380,7 +429,7 @@ img.individual-item.hide {
   padding-bottom: 0px;
   opacity: 0.9;
 }
-
+/* SAC SAP Analytics Cloud */
 .img17 {
 	position: absolute;
     left: 72.5%;
@@ -391,7 +440,7 @@ img.individual-item.hide {
     background-color: white;
     /* opacity: 0.9; */
 }
-
+/* Science World Girlsmart4tech */
 .img18 {
   position: absolute;
   left: 82.5%;
@@ -401,7 +450,7 @@ img.individual-item.hide {
   padding-right: 13px;
     /* opacity: 0.9; */
 }
-
+/* Autism at Work / Bird */
 .img19 {
     position: absolute;
     left: 87.5%;
@@ -411,7 +460,7 @@ img.individual-item.hide {
     padding-bottom: 34px;
     /* opacity: 0.9; */
 }
-
+/* Partners for Life / blood drive / Hospital */
 .img20 {
     position: absolute;
     left: 75.7%;
@@ -442,7 +491,7 @@ img.individual-item.hide {
     z-index: 4;
     /* opacity: 0.9; */
 }
-
+/* iXP */
 .img24 {
 	 position: absolute;
     left: 61%;
@@ -510,6 +559,7 @@ img.individual-item.hide {
     padding-bottom: 26px;
     /* opacity: 0.9; */
 }
+/* Musician / Elton John / Moonwalking */
 .guitarist {
   position: absolute;
   height: 170px;
@@ -524,9 +574,10 @@ img.individual-item.hide {
     50%  {left:74%; top:50%;}
     100% {left:71%; top:50%;}
 }
+/* Bus people */
 .swing {
   position: absolute;
-  height: 92px;
+  height: 70px;
   width: auto;
   animation-name: swing-walk;
   animation-duration: 8s;
@@ -534,11 +585,11 @@ img.individual-item.hide {
   animation-timing-function: ease-in;
 }
 @keyframes swing-walk {
-    0%   {left:63%; top:98%; transform: rotateY(0deg);}
+    0%   {left:61%; top:102%; transform: rotateY(0deg);}
     49%   {transform: rotateY(0deg);}
-    50%  {left:63%; top:98%; transform: rotateY(180deg);}
+    50%  {left:63%; top:102%; transform: rotateY(180deg);}
     99%  {transform: rotateY(180deg);}
-    100% {left:63%; top:98%; transform: rotateY(0deg);}
+    100% {left:61%; top:102%; transform: rotateY(0deg);}
 }
 
 @-webkit-keyframes fadeinout {

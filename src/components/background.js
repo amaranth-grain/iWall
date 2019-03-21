@@ -16,19 +16,24 @@ import flag from '../../assets/images/anim/Flag_Fill.png';
 import wave from '../../assets/images/anim/wave.png';
 import guitarist from '../../assets/images/people/guitarist.png';
 import swing from '../../assets/images/people/swing.png';
+import tree1 from '../../assets/images/people/tree1.png';
+import tree2 from '../../assets/images/people/tree2.png';
+import tree3 from '../../assets/images/people/tree3.png';
+import tree4 from '../../assets/images/people/tree4.png';
 
 // FOR FUN
 //import mario from '../../assets/images/anim/mario.png';
 //import yoshi from '../../assets/images/anim/yoshi.png';
 // import mario from '../../assets/images/anim/mario.png';
 // import yoshi from '../../assets/images/anim/yoshi.png';
-// <img src={ bubbles2 } className="bubblegroup2"  />
+
 
 const Background = () => {
 	return (
 		<div >
 			<img src={ landscape_img } className="artboard-background"  />
 			<img src={ bubbles1 } className="bubblegroup1"  />
+			<img src={ bubbles2 } className="bubblegroup2"  />
 			<img src={ bubbles3 } className="bubblegroup3"  />
 			<img src={ ic } className="ic"  />
 			<img src= { cloud1 } className="cloud1"/>
@@ -39,8 +44,15 @@ const Background = () => {
 			<img src= { elevator } className="elevator" />
 			<img src= { flag } className="flag" />
 			<img src= { wave } className="wave" />
+			<img src= { wave } className="wave2" />
 			<img src= { guitarist } className="guitarist" />
 			<img src= { swing } className="swing" />
+			<img src = { tree1 } className="tree1"/>
+			<img src = { tree2 } className="tree2"/>
+			<img src = { tree3 } className="tree3"/>
+			<img src = { tree4 } className="tree4"/>
+			<img src = { tree4 } className="tree5"/>
+			<img src = { tree2 } className="tree6"/>
 		</div>
 	);
 }
