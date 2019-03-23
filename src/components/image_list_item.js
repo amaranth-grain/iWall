@@ -39,6 +39,13 @@ class ImageListItem extends Component {
 						<iframe src={ `../../assets/sounds/${image.sound}`} allow="autoplay" id="audio"></iframe>
 					</video>
 				);
+			} else if (image.mediaType === "labs") {
+				media = (
+					<video id={image.imageName} ref="vidRef" width="2300" height="560" autoPlay className="labs-video">
+						<source src={ imagePath } type="video/mp4" />
+						<iframe src={ `../../assets/sounds/${image.sound}`} allow="autoplay" id="audio"></iframe>
+					</video>
+				);
 			} else if (image.path === "sattext.gif") {
 				media = (
 					<div>

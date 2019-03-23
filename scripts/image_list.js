@@ -131,18 +131,18 @@ const imgList = {
 				background: "heartsLarge.png"
 			},
 			img16:  {
-				path: "labs.gif", //3 music
+				path: "labs.mp4", //3 music
 				imageName: "img16",
-				duration: 10,
-				mediaType: "img",
+				duration: 28,
+				mediaType: "labs",
 				sound: "Music Note - Rock Music.mp3",
 				background: "spotlight.gif"
 			},
 			img17:  {
-				path: "cloud.gif", //4
+				path: "cloud.mp4", //4
 				imageName: "img17",
 				duration: 9,
-				mediaType: "img",
+				mediaType: "mp4",
 				sound: "Cloud - Laser.mp3",
 				background: ""
 			},

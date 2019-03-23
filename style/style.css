@@ -21,6 +21,13 @@ body {
     overflow:hidden;
 }
 
+.labs-video {
+    top: 8.95%;
+    position: absolute;
+    width: 100%;
+    height: auto;
+}
+
 .bubblegroup1 {
   max-width: 100%;
   z-index: -1;
@@ -319,9 +326,9 @@ img.individual-item.hide {
 /* d-shop*/
 .img5 {
     position: absolute;
-    left: -2.6%;
-    top: 66.5%;
-    width: 20.2%;
+    left: -3%;
+    top: 67.7%;
+    width: 21%;
     background-color: #ffffff00;
     padding-left: 75px;
     /* opacity: 0.9; */
@@ -430,15 +437,23 @@ img.individual-item.hide {
   opacity: 0.9;
 }
 /* SAC SAP Analytics Cloud */
-.img17 {
+/* .img17 {
 	position: absolute;
     left: 72.5%;
     top: 9%;
     width: 12%;
     padding-bottom: 64px;
-    /* padding-right: 16px; */
     background-color: white;
-    /* opacity: 0.9; */
+
+} */
+.img17 {
+	position: absolute;
+    left: 76.6%;
+    top: 24%;
+    width: 6.9%;
+    height: auto;
+    padding-bottom: 64px;
+    background-color: white;
 }
 /* Science World Girlsmart4tech */
 .img18 {

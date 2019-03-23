@@ -25,7 +25,7 @@ import tree4 from '../../assets/images/people/tree4.png';
 //import mario from '../../assets/images/anim/mario.png';
 //import yoshi from '../../assets/images/anim/yoshi.png';
 // import mario from '../../assets/images/anim/mario.png';
-// import yoshi from '../../assets/images/anim/yoshi.png';
+// import yoshi from '../../assets/images/anim/yoshi.png';-+
 
 
 const Background = () => {
