@@ -36,11 +36,6 @@ const Background = () => {
 			<img src={ bubbles2 } className="bubblegroup2"  />
 			<img src={ bubbles3 } className="bubblegroup3"  />
 			<img src={ ic } className="ic"  />
-			<img src= { cloud1 } className="cloud1"/>
-			<img src= { cloud1 } className="cloud5"/>
-			<img src= { cloud1 } className="cloud2"/>
-			<img src= { cloud1 } className="cloud3"/>
-			<img src= { cloud1 } className="cloud4"/>
 			<img src= { elevator } className="elevator" />
 			<img src= { flag } className="flag" />
 			<img src= { wave } className="wave" />

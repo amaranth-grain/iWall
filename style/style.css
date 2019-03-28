@@ -306,13 +306,14 @@ img.individual-item.hide {
 /*Tree: SAP Intern Committee / Spring into Service */
 .img3 {
     position: absolute;
-    left: 35.7%;
-    top: 28.74%;
-    width: 12.1%;
-    background-color: white;
-    padding-left: 19px;
+    left: 39.7%;
+    top: 10%;
+    width: 10%;
+    background-color: #ffffff00;
+
+    /*     padding-left: 19px;
     padding-bottom: 69px;
-    /* opacity: 0.9; */
+    opacity: 0.9; */
 }
 /*Toastmasters / Megaphone */
 .img4 {

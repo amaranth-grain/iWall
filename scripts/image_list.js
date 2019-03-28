@@ -24,10 +24,10 @@ const imgList = {
 				background: ""
 			},
 			img3:  {
-				path: "ic.gif", // tree
+				path: "tree.mp4", // tree
 				imageName: "img3",
 				duration: 10,
-				mediaType: "img",
+				mediaType: "mp4",
 				sound: "Tree - IC Magic.mp3",
 				background: ""
 			},
@@ -131,7 +131,7 @@ const imgList = {
 				background: "heartsLarge.png"
 			},
 			img16:  {
-				path: "labs.mp4", //3 music
+				path: "labsDenser.mp4", //3 music
 				imageName: "img16",
 				duration: 28,
 				mediaType: "labs",

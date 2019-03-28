@@ -5,6 +5,7 @@ import socketIOClient from 'socket.io-client'
 import imgList from '../../scripts/image_list';
 
 import Background from '../components/background';
+import Clouds from '../components/Clouds';
 import ImageListItem from '../components/image_list_item';
 
 
@@ -14,6 +15,7 @@ export default class App extends Component {
 			this.state = {
 					images: [],
 					endpoint: "http://127.0.0.1:4001",
+					showClouds: [true, true],
 					keyboardInput: ""
 				};
 		}
@@ -90,11 +92,35 @@ export default class App extends Component {
 			}
 
 			if (!this.state.images.find(image => image.imageName === img.imageName) && this.state.images.length < 3) {
-				this.setState({
-					images: [...this.state.images, img],
-					// for testing only, comment out when in production
-					keyboardInput: ""
-				});
+				switch (img.imageName) {
+					case "img3":
+						this.setState({
+							images: [...this.state.images, img],
+							showClouds: [false, this.state.showClouds[1]],
+							// for testing only, comment out when in production
+							keyboardInput: ""
+						});
+					case "img6":
+						this.setState({
+							images: [...this.state.images, img],
+							showClouds: [false, this.state.showClouds[1]],
+							// for testing only, comment out when in production
+							keyboardInput: ""
+						});
+					case "img20":
+						this.setState({
+							images: [...this.state.images, img],
+							showClouds: [this.state.showClouds[0], false],
+							// for testing only, comment out when in production
+							keyboardInput: ""
+						});
+					default:
+						this.setState({
+							images: [...this.state.images, img],
+							// for testing only, comment out when in production
+							keyboardInput: ""
+						});
+				}
 			} else {
 				this.setState({
 					// for testing only, comment out when in production
@@ -106,7 +132,20 @@ export default class App extends Component {
 		//comment contents for componenet placement
 		removeImage = (img) => {
 			const newImages = this.state.images.filter(image => image.imageName !== img.imageName);
-			this.setState({ images: newImages });
+			if (img.imageName === "img3" || img.imageName === "img6") {
+				this.setState({ 
+					images: newImages,
+					showClouds: [true, true]
+				 });
+				//  console.log(this.state);
+			} else if (img.imageName === "img20") {
+				this.setState({ 
+					images: newImages,
+					showClouds: [true, true]
+				 });
+			} else {
+				this.setState({ images: newImages });
+			}
 		}
 
 		convertSerialPortDataToJSX = (data) => {
@@ -129,8 +168,9 @@ export default class App extends Component {
 			return (
     			<div className="wall-area">
      		 		<Background />
+					<Clouds showClouds = {this.state.showClouds} />
      		 		{imageItems}
-					<div>Input image #: {this.state.keyboardInput}</div>
+					{/* <div>Input image #: {this.state.keyboardInput}</div> */}
      		 	</div>
    		);
 		}
