@@ -31,8 +31,8 @@ const mapToCheck = {
 	img18: ["img16"],
 	img19: ["img16"],
 	img20: ["img14", "img15", "img16"],
-	img21: [],
-	img22: [],
+	// img21: [],
+	// img22: [],
 	img23: ["img16"],
 	img24: ["img16"]
 }
