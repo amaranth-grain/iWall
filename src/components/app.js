@@ -4,10 +4,10 @@ import socketIOClient from 'socket.io-client'
 
 import imgList from '../../scripts/image_list';
 
-import Background from '../components/background';
-import UpperClouds from './UpperClouds';
-import LowerClouds from './LowerClouds';
-import ImageListItem from '../components/image_list_item';
+import Background from './background';
+import UpperClouds from './upperClouds';
+import LowerClouds from './lowerClouds';
+import ImageListItem from './image_list_item';
 
 
 export default class App extends Component {
@@ -96,7 +96,9 @@ export default class App extends Component {
 			if (!this.state.images.find(image => image.imageName === img.imageName) && this.state.images.length < 3) {
 				switch (img.imageName) {
 					case "img3":
+					case "img4":
 					case "img6":
+					case "img10":
 						this.setState({
 							images: [...this.state.images, img],
 							showUpperClouds: false,
@@ -105,6 +107,8 @@ export default class App extends Component {
 						});
 						break;
 					case "img2":
+					case "img14":
+					case "img15":
 					case "img20":
 						this.setState({
 							images: [...this.state.images, img],
@@ -133,13 +137,17 @@ export default class App extends Component {
 			const newImages = this.state.images.filter(image => image.imageName !== img.imageName);
 			switch (img.imageName) {
 				case "img3":
+				case "img4":
 				case "img6":
+				case "img10":
 					this.setState({ 
 						images: newImages,
 						showUpperClouds: true
 					});
 					break;
 				case "img2":
+				case "img14":
+				case "img15":
 				case "img20":
 					this.setState({ 
 						images: newImages,
