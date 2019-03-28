@@ -5,7 +5,8 @@ import socketIOClient from 'socket.io-client'
 import imgList from '../../scripts/image_list';
 
 import Background from '../components/background';
-import Clouds from '../components/Clouds';
+import UpperClouds from './UpperClouds';
+import LowerClouds from './LowerClouds';
 import ImageListItem from '../components/image_list_item';
 
 
@@ -15,17 +16,18 @@ export default class App extends Component {
 			this.state = {
 					images: [],
 					endpoint: "http://127.0.0.1:4001",
-					showClouds: [true, true],
+					showUpperClouds: true,
+					showLowerClouds: true,
 					keyboardInput: ""
 				};
 		}
 
 		componentDidMount() {
-			const { endpoint } = this.state;
-			const socket = socketIOClient(endpoint);
-			socket.on("test", data => {
-				this.convertSerialPortDataToJSX(data);
-			});
+			// const { endpoint } = this.state;
+			// const socket = socketIOClient(endpoint);
+			// socket.on("test", data => {
+			// 	this.convertSerialPortDataToJSX(data);
+			// });
 		}
 
 		handleKeyboardInput = event => {
@@ -94,26 +96,23 @@ export default class App extends Component {
 			if (!this.state.images.find(image => image.imageName === img.imageName) && this.state.images.length < 3) {
 				switch (img.imageName) {
 					case "img3":
-						this.setState({
-							images: [...this.state.images, img],
-							showClouds: [false, this.state.showClouds[1]],
-							// for testing only, comment out when in production
-							keyboardInput: ""
-						});
 					case "img6":
 						this.setState({
 							images: [...this.state.images, img],
-							showClouds: [false, this.state.showClouds[1]],
+							showUpperClouds: false,
 							// for testing only, comment out when in production
 							keyboardInput: ""
 						});
+						break;
+					case "img2":
 					case "img20":
 						this.setState({
 							images: [...this.state.images, img],
-							showClouds: [this.state.showClouds[0], false],
+							showLowerClouds: false,
 							// for testing only, comment out when in production
 							keyboardInput: ""
 						});
+						break;
 					default:
 						this.setState({
 							images: [...this.state.images, img],
@@ -132,19 +131,23 @@ export default class App extends Component {
 		//comment contents for componenet placement
 		removeImage = (img) => {
 			const newImages = this.state.images.filter(image => image.imageName !== img.imageName);
-			if (img.imageName === "img3" || img.imageName === "img6") {
-				this.setState({ 
-					images: newImages,
-					showClouds: [true, true]
-				 });
-				//  console.log(this.state);
-			} else if (img.imageName === "img20") {
-				this.setState({ 
-					images: newImages,
-					showClouds: [true, true]
-				 });
-			} else {
-				this.setState({ images: newImages });
+			switch (img.imageName) {
+				case "img3":
+				case "img6":
+					this.setState({ 
+						images: newImages,
+						showUpperClouds: true
+					});
+					break;
+				case "img2":
+				case "img20":
+					this.setState({ 
+						images: newImages,
+						showLowerClouds: true
+					});
+					break;
+				default:
+					this.setState({ images: newImages });
 			}
 		}
 
@@ -164,13 +167,14 @@ export default class App extends Component {
 				const imageKey = image.imageName;
 				return <ImageListItem key={imageKey}  image={image} removeImage={this.removeImage} />
 			});
+			console.log(this.state);
 
 			return (
     			<div className="wall-area">
      		 		<Background />
-					<Clouds showClouds = {this.state.showClouds} />
+					<UpperClouds showUpperClouds = {this.state.showUpperClouds} />
+					<LowerClouds showLowerClouds = {this.state.showLowerClouds} />
      		 		{imageItems}
-					{/* <div>Input image #: {this.state.keyboardInput}</div> */}
      		 	</div>
    		);
 		}
