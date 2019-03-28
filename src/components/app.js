@@ -9,12 +9,40 @@ import UpperClouds from './upperClouds';
 import LowerClouds from './lowerClouds';
 import ImageListItem from './image_list_item';
 
+// array of array of animations that should not play simultaneously
+const mapToCheck = {
+	img0: ["img23", "img16"],
+	img2: ["img23", "img16"],
+	img3: ["img4", "img16"],
+	img4: ["img3", "img16"],
+	img5: ["img11", "img16"],
+	img6: ["img16"],
+	img7: ["img16"],
+	img8: ["img16"],
+	img9: ["img16"],
+	img10: ["img16"],
+	img11: ["img5", "img16"],
+	// img12: [],                         // no animation attached
+	img13: ["img16"],
+	img14: ["img15", "img16", "img20"],
+	img15: ["img14", "img16", "img20"],
+	// img16: [],                         // special case: SAP Labs Canada Rocks
+	img17: ["img16"],
+	img18: ["img16"],
+	img19: ["img16"],
+	img20: ["img14", "img15", "img16"],
+	img21: [],
+	img22: [],
+	img23: ["img16"],
+	img24: ["img16"]
+}
 
 export default class App extends Component {
 		constructor(props) {
 			super(props);
 			this.state = {
 					images: [],
+					imageNames: [],
 					endpoint: "http://127.0.0.1:4001",
 					showUpperClouds: true,
 					showLowerClouds: true,
@@ -56,62 +84,50 @@ export default class App extends Component {
 		}
 
 		addImage = img => {
-			//hospital collides with helicopter and heart
-			if(img.imageName === "img20" && this.state.images.find(image => (image.imageName === "img14" || image.imageName === "img15"))){
-				return;
-			} else if ((img.imageName === "img14" || img.imageName === "img15") && this.state.images.find(image => image.imageName === "img20")){
+			const newImages = [...this.state.images, img];
+			const newImageNames = [... this.state.imageNames, img.imageName];
+
+
+			const namesToCheck = (mapToCheck[img.imageName] === undefined) ? 0: mapToCheck[img.imageName];
+			
+			// console.log(namesToCheck);
+			// console.log(this.state.imageNames.length);
+
+			// check for SAP Labs Canada Rocks
+			if (img.imageName === "img16" && this.state.imageNames.length !== 0) {
 				return;
 			}
 
-			//building collides with mountain
-			if(img.imageName === "img2" && this.state.images.find(image => image.imageName === "img23")){
-				return;
-			} else if (img.imageName === "img23" && this.state.images.find(image => image.imageName === "img2")){
-				return;
-			}
-
-			//building collides with speech bubble
-			if(img.imageName === "img0" && this.state.images.find(image => image.imageName === "img23")){
-				return;
-			} else if (img.imageName === "img23" && this.state.images.find(image => image.imageName === "img0")){
-				return;
-			}
-
-			//dshop collides with trophy
-			if(img.imageName === "img11" && this.state.images.find(image => image.imageName === "img5")){
-				return;
-			} else if (img.imageName === "img5" && this.state.images.find(image => image.imageName === "img11")){
-				return;
-			}
-
-			//3 way collision of music, megaphone, and ic
-			if(img.imageName === "img16" && this.state.images.find(image => (image.imageName === "img3" || image.imageName === "img4"))){
-				return;
-			} else if (img.imageName === "img3" && this.state.images.find(image => (image.imageName === "img4" || image.imageName === "img16"))){
-				return;
-			} else if (img.imageName === "img4" && this.state.images.find(image => (image.imageName === "img3" || image.imageName === "img16"))){
-				return;
+			// check for collisions
+			for (var i = 0; i < namesToCheck.length; i++) {
+				if (this.state.imageNames.includes(namesToCheck[i])) {
+					return;
+				}
 			}
 
 			if (!this.state.images.find(image => image.imageName === img.imageName) && this.state.images.length < 3) {
 				switch (img.imageName) {
+					// turn off upper clouds
 					case "img3":
 					case "img4":
 					case "img6":
 					case "img10":
 						this.setState({
-							images: [...this.state.images, img],
+							images: newImages,
+							imageNames: newImageNames,
 							showUpperClouds: false,
 							// for testing only, comment out when in production
 							keyboardInput: ""
 						});
 						break;
+					// turn off lower clouds
 					case "img2":
 					case "img14":
 					case "img15":
 					case "img20":
 						this.setState({
-							images: [...this.state.images, img],
+							images: newImages,
+							imageNames: newImageNames,
 							showLowerClouds: false,
 							// for testing only, comment out when in production
 							keyboardInput: ""
@@ -119,12 +135,14 @@ export default class App extends Component {
 						break;
 					default:
 						this.setState({
-							images: [...this.state.images, img],
+							images: newImages,
+							imageNames: newImageNames,
 							// for testing only, comment out when in production
 							keyboardInput: ""
 						});
 				}
 			} else {
+				// this case is just for resetting keyboard input
 				this.setState({
 					// for testing only, comment out when in production
 					keyboardInput: ""
@@ -135,27 +153,36 @@ export default class App extends Component {
 		//comment contents for componenet placement
 		removeImage = (img) => {
 			const newImages = this.state.images.filter(image => image.imageName !== img.imageName);
+			const newImageNames = this.state.imageNames.filter(imageName => imageName !== img.imageName);
+
 			switch (img.imageName) {
+				// turn on upper clouds
 				case "img3":
 				case "img4":
 				case "img6":
 				case "img10":
 					this.setState({ 
 						images: newImages,
+						imageNames: newImageNames,
 						showUpperClouds: true
 					});
 					break;
+				// turn on lower clouds
 				case "img2":
 				case "img14":
 				case "img15":
 				case "img20":
 					this.setState({ 
 						images: newImages,
+						imageNames: newImageNames,
 						showLowerClouds: true
 					});
 					break;
 				default:
-					this.setState({ images: newImages });
+					this.setState({
+						images: newImages,
+						imageNames: newImageNames,
+					});
 			}
 		}
 
@@ -175,7 +202,7 @@ export default class App extends Component {
 				const imageKey = image.imageName;
 				return <ImageListItem key={imageKey}  image={image} removeImage={this.removeImage} />
 			});
-			console.log(this.state);
+			// console.log(mapToCheck);
 
 			return (
     			<div className="wall-area">
