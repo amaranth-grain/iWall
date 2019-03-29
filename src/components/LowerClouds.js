@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
 import cloud1 from '../../assets/images/anim/cloud.png';
 
-export default class LowerClouds extends Component {
+class LowerClouds extends Component {
     constructor(props) {
         super(props);
     }
     
     render() {
-        // console.log(this.props.showLowerClouds);
         if (this.props.showLowerClouds === true) {
             return (
                 <div>
@@ -22,3 +23,11 @@ export default class LowerClouds extends Component {
         }
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        showLowerClouds: state.clouds[1]
+    };
+}
+
+export default connect(mapStateToProps)(LowerClouds);
