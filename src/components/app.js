@@ -52,11 +52,11 @@ export default class App extends Component {
 		}
 
 		componentDidMount() {
-			// const { endpoint } = this.state;
-			// const socket = socketIOClient(endpoint);
-			// socket.on("test", data => {
-			// 	this.convertSerialPortDataToJSX(data);
-			// });
+			const { endpoint } = this.state;
+			const socket = socketIOClient(endpoint);
+			socket.on("test", data => {
+				this.convertSerialPortDataToJSX(data);
+			});
 		}
 
 		handleKeyboardInput = event => {
