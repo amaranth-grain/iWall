@@ -12,6 +12,7 @@ import ImageListItem from './image_list_item';
 // array of array of animations that should not play simultaneously
 const mapToCheck = {
 	img0: ["img23", "img16"],
+	img1: ["img16"],
 	img2: ["img23", "img16"],
 	img3: ["img4", "img16"],
 	img4: ["img3", "img16"],
@@ -87,16 +88,20 @@ export default class App extends Component {
 			const newImages = [...this.state.images, img];
 			const newImageNames = [... this.state.imageNames, img.imageName];
 
+			console.log(`newImages: ${newImages}`);
+			console.log(`newImageNames: ${newImageNames}`);
 
 			const namesToCheck = (mapToCheck[img.imageName] === undefined) ? 0: mapToCheck[img.imageName];
 			
 			// console.log(namesToCheck);
-			// console.log(this.state.imageNames.length);
+			console.log(`this.state.imageNames: ${this.state.imageNames}`);
 
 			// check for SAP Labs Canada Rocks
 			if (img.imageName === "img16" && this.state.imageNames.length !== 0) {
 				return;
 			}
+
+			console.log("Passed SLCR Check");
 
 			// check for collisions
 			for (var i = 0; i < namesToCheck.length; i++) {
