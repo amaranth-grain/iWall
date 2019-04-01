@@ -1,16 +1,14 @@
-import React from 'react';
-// import landscape_img from '../../assets/images/after-vinyl---export-projections.jpg';
-//import landscape_img from '../../assets/images/Background.jpg';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { fetchWeather } from '../actions';
+
+import socketIOClient from 'socket.io-client';
+
 import landscape_img from '../../assets/images/projectednew.jpg';
 import ic from '../../assets/images/9-permanent.png';
 import bubbles1 from '../../assets/images/bubbles/bubbles1.png';
 import bubbles2 from '../../assets/images/bubbles/bubbles2.png';
 import bubbles3 from '../../assets/images/bubbles/bubbles3.png';
-import cloud1 from '../../assets/images/anim/cloud.png';
-import cloudFilled from '../../assets/images/anim/cloud_filled.png';
-import cloudFilled2 from '../../assets/images/anim/cloud_2_filled.png';
-import cloudFilled3 from '../../assets/images/anim/cloud_3_filled.png';
-import cloudFilled4 from '../../assets/images/anim/cloud_4_filled.png';
 import elevator from '../../assets/images/anim/Elevator.png';
 import flag from '../../assets/images/anim/Flag_Fill.png';
 import wave from '../../assets/images/anim/wave.png';
@@ -28,28 +26,75 @@ import tree4 from '../../assets/images/people/tree4.png';
 // import yoshi from '../../assets/images/anim/yoshi.png';-+
 
 
-const Background = () => {
-	return (
-		<div >
-			<img src={ landscape_img } className="artboard-background"  />
-			<img src={ bubbles1 } className="bubblegroup1"  />
-			<img src={ bubbles2 } className="bubblegroup2"  />
-			<img src={ bubbles3 } className="bubblegroup3"  />
-			<img src={ ic } className="ic"  />
-			<img src= { elevator } className="elevator" />
-			<img src= { flag } className="flag" />
-			<img src= { wave } className="wave" />
-			<img src= { wave } className="wave2" />
-			<img src= { guitarist } className="guitarist" />
-			<img src= { swing } className="swing" />
-			<img src = { tree1 } className="tree1"/>
-			<img src = { tree2 } className="tree2"/>
-			<img src = { tree3 } className="tree3"/>
-			<img src = { tree4 } className="tree4"/>
-			<img src = { tree4 } className="tree5"/>
-			<img src = { tree2 } className="tree6"/>
-		</div>
-	);
+class Background extends Component {
+	constructor(props) {
+		super(props);
+
+		this.state = {
+            endpoint: "http://127.0.0.1:4001",
+            keyboardInput: ""
+        }
+	}
+
+	componentDidMount() {
+		setTimeout(() => this.props.fetchWeather(), 3600000);
+	}
+
+	// for testing
+    componentWillMount() {
+        window.addEventListener('keydown', this.handleKeyboardInput.bind(this));
+    }
+
+    // for testing
+    handleKeyboardInput = event => {
+        if (event.key == "Enter") {
+            console.log(this.state.keyboardInput);
+            this.props.fetchWeather();
+            this.setState({
+                keyboardInput: ""
+            })
+        } else if (event.key == "Backspace") {
+            console.log("Input Cleared")
+            this.setState({
+                keyboardInput: ""
+            })
+        } else {
+            this.setState({
+                keyboardInput: this.state.keyboardInput + event.key
+            })
+        }
+    }
+
+	render() {
+		console.log(this.props);
+		return (
+			<div >
+				<img src={ landscape_img } className="artboard-background"  />
+				<img src={ bubbles1 } className="bubblegroup1"  />
+				<img src={ bubbles2 } className="bubblegroup2"  />
+				<img src={ bubbles3 } className="bubblegroup3"  />
+				<img src={ ic } className="ic"  />
+				<img src= { elevator } className="elevator" />
+				<img src= { flag } className="flag" />
+				<img src= { wave } className="wave" />
+				<img src= { wave } className="wave2" />
+				<img src= { guitarist } className="guitarist" />
+				<img src= { swing } className="swing" />
+				<img src = { tree1 } className="tree1"/>
+				<img src = { tree2 } className="tree2"/>
+				<img src = { tree3 } className="tree3"/>
+				<img src = { tree4 } className="tree4"/>
+				<img src = { tree4 } className="tree5"/>
+				<img src = { tree2 } className="tree6"/>
+			</div>
+		);
+	};
 }
 
-export default Background;
+const mapStateToProps = (state) => {
+    return {
+        currWeather: state.weather
+    };
+}
+
+export default connect(mapStateToProps, { fetchWeather })(Background);

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
 import AnimationList from './AnimationList';
-import Background from './background';
+import Background from './Background';
 import UpperClouds from './upperClouds';
 import LowerClouds from './lowerClouds';
 

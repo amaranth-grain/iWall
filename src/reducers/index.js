@@ -39,7 +39,7 @@ const animationsReducer = () => {
 };
 
 const cloudsReducer = (clouds = [true, true], action) => {
-    if (action.type == 'ANIMATION_SELECTED') {
+    if (action.type === 'ANIMATION_SELECTED') {
         const animation = action.payload.selectedAnimation;
 
         switch (animation.imageName) {
@@ -60,7 +60,7 @@ const cloudsReducer = (clouds = [true, true], action) => {
         }
     }
 
-    if (action.type == 'ANIMATION_DELETED') {
+    if (action.type === 'ANIMATION_DELETED') {
         const animation = action.payload.deletedAnimation;
 
         switch (animation.imageName) {
@@ -86,7 +86,7 @@ const cloudsReducer = (clouds = [true, true], action) => {
 
 const currAnimationsReducer = (currAnimations = { currAnimations: [], currAnimationNames: [] }, action) => {
     // console.log(action.payload);
-    if (action.type == 'ANIMATION_SELECTED') {
+    if (action.type === 'ANIMATION_SELECTED') {
         const animation = action.payload.selectedAnimation;
         const namesToCheck = (mapToCheck[animation.imageName] === undefined) ? []: mapToCheck[animation.imageName];
 
@@ -119,7 +119,7 @@ const currAnimationsReducer = (currAnimations = { currAnimations: [], currAnimat
         };
     }
     
-    if (action.type == 'ANIMATION_DELETED') {
+    if (action.type === 'ANIMATION_DELETED') {
         const animation = action.payload.deletedAnimation;
 
         const newAnimations = currAnimations.currAnimations.filter(anim => anim.imageName !== animation.imageName);
@@ -134,8 +134,20 @@ const currAnimationsReducer = (currAnimations = { currAnimations: [], currAnimat
     return currAnimations;
 };
 
+const weatherReducer = (currWeather = "Sunny", action) => {
+    // console.log(action.payload.data);
+
+    if (action.type === "FETCH_WEATHER") {
+        // console.log("Weather: " + action.payload.data.weather[0].main);
+        return action.payload.data.weather[0].main;
+    }
+
+    return currWeather;
+}
+
 export default combineReducers({
     animations: animationsReducer,
     currAnimations: currAnimationsReducer,
-    clouds: cloudsReducer
+    clouds: cloudsReducer,
+    weather: weatherReducer
 });

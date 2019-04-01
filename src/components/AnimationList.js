@@ -34,10 +34,12 @@ class AnimationList extends Component {
         }
     }
 
+    // for testing
     componentWillMount() {
         window.addEventListener('keydown', this.handleKeyboardInput.bind(this));
     }
 
+    // for testing
     handleKeyboardInput = event => {
         if (event.key == "Enter") {
             console.log(this.state.keyboardInput);
