@@ -113,6 +113,8 @@ const currAnimationsReducer = (currAnimations = { currAnimations: [], currAnimat
             return currAnimations;
         }
 
+        console.log("Passed");
+
         return {
           currAnimations: [... action.payload.currAnimations, animation],
           currAnimationNames: [... action.payload.currAnimationNames, animation.imageName]

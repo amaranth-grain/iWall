@@ -58,13 +58,13 @@ class Background extends Component {
     // for testing
     handleKeyboardInput = event => {
         if (event.key == "Enter") {
-            console.log(this.state.keyboardInput);
+            // console.log(this.state.keyboardInput);
             this.props.fetchWeather();
             this.setState({
                 keyboardInput: ""
             });
         } else if (event.key == "Backspace") {
-            console.log("Input Cleared")
+            // console.log("Input Cleared")
             this.setState({
                 keyboardInput: ""
             });
@@ -76,8 +76,8 @@ class Background extends Component {
     };
 
 	render() {
-		console.log("rendered");
-		console.log(this.props);
+		// console.log("rendered");
+		// console.log(this.props);
 		return (
 			<div >
 				<img src={ landscape_img } className="artboard-background"  />

@@ -1,16 +1,11 @@
 import 'babel-polyfill';
 import axios from 'axios';
 
-import imgList from '../../scripts/image_list';
-
 const API_KEY = '7cb2afc8370fc561554bab673509709c';
 const ROOT_URL = `http://api.openweathermap.org/data/2.5/`;
 
 // Action creator
 export const selectAnimation = (selectedAnimation, currAnimations = [], currAnimationNames = []) => {
-    // for keyboard testing, comment out when not using keyboard
-    // const imgData = imgList[`img${selectedAnimation}`];
-
     // Return an action
     return {
         type: 'ANIMATION_SELECTED',
