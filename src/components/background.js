@@ -31,19 +31,29 @@ class Background extends Component {
 		super(props);
 
 		this.state = {
+			time: Date.now(),
             endpoint: "http://127.0.0.1:4001",
             keyboardInput: ""
-        }
-	}
+        };
+	};
 
 	componentDidMount() {
-		setTimeout(() => this.props.fetchWeather(), 3600000);
+		this.interval = setInterval(() => {
+			this.props.fetchWeather();
+			this.setState({
+				time: Date.now()
+			});
+		}, 3600000); // fetch weather every 1 hour, should change to shorter interval if testing
 	}
 
 	// for testing
     componentWillMount() {
         window.addEventListener('keydown', this.handleKeyboardInput.bind(this));
-    }
+	}
+	
+	componentWillUnmount() {
+		clearInterval(this.interval);
+	}
 
     // for testing
     handleKeyboardInput = event => {
@@ -52,20 +62,21 @@ class Background extends Component {
             this.props.fetchWeather();
             this.setState({
                 keyboardInput: ""
-            })
+            });
         } else if (event.key == "Backspace") {
             console.log("Input Cleared")
             this.setState({
                 keyboardInput: ""
-            })
+            });
         } else {
             this.setState({
                 keyboardInput: this.state.keyboardInput + event.key
-            })
-        }
-    }
+            });
+        };
+    };
 
 	render() {
+		console.log("rendered");
 		console.log(this.props);
 		return (
 			<div >
@@ -89,7 +100,7 @@ class Background extends Component {
 			</div>
 		);
 	};
-}
+};
 
 const mapStateToProps = (state) => {
     return {
