@@ -124,7 +124,7 @@ body {
 .elevator {
     position: absolute;
     height: 25px;
-    width: 21px;
+    width: 18px;
     animation-name: elevator-movement;
     animation-duration: 6s;
     animation-iteration-count: infinite;
@@ -132,10 +132,10 @@ body {
 }
 .flag {
     position: absolute;
-    height: 11px;
-    width: 22px;
-    top: 78%;
-    left: 36.5%;
+    height: 10px;
+    width: 20px;
+    top: 77.9%;
+    left: 36.4%;
 }
 
 .wave{
@@ -160,37 +160,37 @@ body {
     position: absolute;
     top: 36%;
     left: 31.38%;
-    width: 24px;
+    width: 22px;
 }
 .tree2{
     position: absolute;
     top: 38.2%;
     left: 30.75%;
-    width: 24px;
+    width: 22px;
 }
 .tree3{
     position: absolute;
     top: 43.4%;
     left: 29.26%;
-    width: 24px;
+    width: 22px;
 }
 .tree4{
     position: absolute;
     top: 41.4%;
     left: 28.5%;
-    width: 27px;
+    width: 24px;
 }
 .tree5{
     position: absolute;
     top: 38.8%;
     left: 38.5%;
-    width: 31px;
+    width: 27px;
 }
 .tree6{
     position: absolute;
     top: 41.8%;
     left: 39.36%;
-    width: 31px;
+    width: 27px;
 }
 @keyframes cloud-drift1 {
     0%   {left:30.2%; top:14.8%;}
@@ -218,9 +218,9 @@ body {
     100% {left:17.2%; top:17.8%;}
 }
 @keyframes elevator-movement {
-    0%   {left:36%; top:110%;}
-    50%  {left:36%; top:90.8%;}
-    100% {left:36%; top:110%;}
+    0%   {left:36%; top:109%;}
+    50%  {left:36%; top:91.8%;}
+    100% {left:36%; top:109%;}
 }
 @keyframes wave-movement {
     0%   {left:94%; top:119%;}
@@ -578,7 +578,7 @@ img.individual-item.hide {
 /* Musician / Elton John / Moonwalking */
 .guitarist {
   position: absolute;
-  height: 170px;
+  height: 150px;
   width: auto;
   animation-name: guitarist-moonwalk;
   animation-duration: 9s;
@@ -593,7 +593,7 @@ img.individual-item.hide {
 /* Bus people */
 .swing {
   position: absolute;
-  height: 70px;
+  height: 65px;
   width: auto;
   animation-name: swing-walk;
   animation-duration: 8s;
