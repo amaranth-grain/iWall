@@ -18,22 +18,22 @@ class AnimationList extends Component {
     }
 
     componentDidMount() {
-        const { endpoint } = this.state;
-        const socket = socketIOClient(endpoint);
-        socket.on("test", data => {
-            this.convertSerialPortDataToJSX(data);
-        });
+        // const { endpoint } = this.state;
+        // const socket = socketIOClient(endpoint);
+        // socket.on("test", data => {
+        //     this.convertSerialPortDataToJSX(data);
+        // });
     }
 
     convertSerialPortDataToJSX = (data) => {
-        const enc = new TextDecoder("utf-8");
-        const convertedData = enc.decode(data).trim().toString();
+        // const enc = new TextDecoder("utf-8");
+        // const convertedData = enc.decode(data).trim().toString();
 
-        if (convertedData.includes("was just touched")) {
-            const imgName = "img" + parseInt(convertedData.match(/\d+/)[0], 10);
-            const imgData = imgList[imgName];
-            this.props.selectAnimation(imgData, this.props.currAnimations, this.props.currAnimationNames);
-        }
+        // if (convertedData.includes("was just touched")) {
+        //     const imgName = "img" + parseInt(convertedData.match(/\d+/)[0], 10);
+        //     const imgData = imgList[imgName];
+        //     this.props.selectAnimation(imgData, this.props.currAnimations, this.props.currAnimationNames);
+        // }
     }
 
     // for testing
@@ -67,7 +67,7 @@ class AnimationList extends Component {
     }
 
     renderList() {
-        // console.log(this.props.currAnimations);
+        console.log(this.props.currAnimations);
         return this.props.currAnimations.map( (animation) => {
 			const animationKey = animation.imageName;
 			return <ImageListItem key={animationKey}  image={animation} removeImage={this.removeImage} />;

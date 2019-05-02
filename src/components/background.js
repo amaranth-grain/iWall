@@ -77,7 +77,7 @@ class Background extends Component {
 
 	render() {
 		// console.log("rendered");
-		console.log(this.props);
+		// console.log(this.props);
 		return (
 			<div >
 				<img src={ landscape_img } className="artboard-background"  />
