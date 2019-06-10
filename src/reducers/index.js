@@ -31,13 +31,13 @@ const mapToCheck = {
 
 // range of drops b/w 0-100
 const weatherCodes = {
-    "Thunderstorm": Math.floor(Math.random() * 10) + 80,
-    "Drizzle": Math.floor(Math.random() * 15) + 1,
-    "Rain": Math.floor(Math.random() * 10) + 20,
-    "Snow": Math.floor(Math.random() * 10) + 20,
+    "Thunderstorm": 80,
+    "Drizzle": 20,
+    "Rain": 40,
+    "Snow": 40,
     "Atmosphere": 0,
     "Clear": 0,
-    "Clouds": Math.floor(Math.random() * 10) + 5
+    "Clouds": 40
 
 }
 
