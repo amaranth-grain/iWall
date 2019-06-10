@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchWeather } from '../actions';
-
+import ReactRain from "react-rain-animation";
 import socketIOClient from 'socket.io-client';
 
 import landscape_img from '../../assets/images/projectednew.jpg';
@@ -33,7 +33,7 @@ class Background extends Component {
 		this.state = {
 			time: Date.now(),
             endpoint: "http://127.0.0.1:4001",
-            keyboardInput: ""
+			keyboardInput: ""
         };
 	};
 
@@ -48,7 +48,8 @@ class Background extends Component {
 
 	// for testing
     componentWillMount() {
-        window.addEventListener('keydown', this.handleKeyboardInput.bind(this));
+		this.props.fetchWeather();
+        // window.addEventListener('keydown', this.handleKeyboardInput.bind(this));
 	}
 	
 	componentWillUnmount() {
@@ -56,30 +57,27 @@ class Background extends Component {
 	}
 
     // for testing
-    handleKeyboardInput = event => {
-        if (event.key == "Enter") {
-            // console.log(this.state.keyboardInput);
-            this.props.fetchWeather();
-            this.setState({
-                keyboardInput: ""
-            });
-        } else if (event.key == "Backspace") {
-            // console.log("Input Cleared")
-            this.setState({
-                keyboardInput: ""
-            });
-        } else {
-            this.setState({
-                keyboardInput: this.state.keyboardInput + event.key
-            });
-        };
-    };
+    // handleKeyboardInput = event => {
+    //     if (event.key == "Enter") {
+    //         this.props.fetchWeather();
+    //         this.setState({
+    //             keyboardInput: ""
+    //         });
+    //     } else if (event.key == "Backspace") {
+    //         this.setState({
+    //             keyboardInput: ""
+    //         });
+    //     } else {
+    //         this.setState({
+    //             keyboardInput: this.state.keyboardInput + event.key
+    //         });
+    //     };
+    // };
 
 	render() {
-		// console.log("rendered");
-		// console.log(this.props);
 		return (
 			<div >
+				<ReactRain numDrops={this.props.currWeather} />
 				<img src={ landscape_img } className="artboard-background"  />
 				<img src={ bubbles1 } className="bubblegroup1"  />
 				<img src={ bubbles2 } className="bubblegroup2"  />
@@ -103,6 +101,7 @@ class Background extends Component {
 };
 
 const mapStateToProps = (state) => {
+	console.log(state);
     return {
         currWeather: state.weather
     };

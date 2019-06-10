@@ -29,6 +29,18 @@ const mapToCheck = {
 	img24: ["img16"]
 }
 
+// range of drops b/w 0-100
+const weatherCodes = {
+    "Thunderstorm": Math.floor(Math.random() * 10) + 80,
+    "Drizzle": Math.floor(Math.random() * 15) + 1,
+    "Rain": Math.floor(Math.random() * 10) + 20,
+    "Snow": Math.floor(Math.random() * 10) + 20,
+    "Atmosphere": 0,
+    "Clear": 0,
+    "Clouds": Math.floor(Math.random() * 10) + 5
+
+}
+
 const animations = [
     "img0", "img1", "img2", "img3", "img4", "img5", "img6", "img7", "img8", "img9", "img10", "img11", "img12", "img13", "img14", "img15", "img16",
     "img17", "img18", "img19", "img20", "img21", "img22", "img23", "img24"
@@ -136,12 +148,13 @@ const currAnimationsReducer = (currAnimations = { currAnimations: [], currAnimat
     return currAnimations;
 };
 
-const weatherReducer = (currWeather = "Sunny", action) => {
+const weatherReducer = (currWeather = 0, action) => {
     // console.log(action.payload.data);
 
     if (action.type === "FETCH_WEATHER") {
         // console.log("Weather: " + action.payload.data.weather[0].main);
-        return action.payload.data.weather[0].main;
+        console.log(weatherCodes[action.payload.data.weather[0].main]);
+        return weatherCodes[action.payload.data.weather[0].main];
     }
 
     return currWeather;
