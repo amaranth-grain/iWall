@@ -131,7 +131,7 @@ const imgList = {
 				background: "heartsLarge.png"
 			},
 			img16:  {
-				path: "labsDenser.mp4", //3 music
+				path: "labs_updated.mp4", //3 music
 				imageName: "img16",
 				duration: 28,
 				mediaType: "labs",

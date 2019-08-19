@@ -1,8 +1,4 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { fetchWeather } from '../actions';
-import ReactRain from "react-rain-animation";
-import socketIOClient from 'socket.io-client';
+import React from 'react';
 
 import landscape_img from '../../assets/images/projectednew.jpg';
 import ic from '../../assets/images/9-permanent.png';
@@ -19,92 +15,27 @@ import tree2 from '../../assets/images/people/tree2.png';
 import tree3 from '../../assets/images/people/tree3.png';
 import tree4 from '../../assets/images/people/tree4.png';
 
-// FOR FUN
-//import mario from '../../assets/images/anim/mario.png';
-//import yoshi from '../../assets/images/anim/yoshi.png';
-// import mario from '../../assets/images/anim/mario.png';
-// import yoshi from '../../assets/images/anim/yoshi.png';-+
 
+const Background = () => (
+	<div>
+		<img src={ landscape_img } className="artboard-background"  />
+		<img src={ bubbles1 } className="bubblegroup1"  />
+		<img src={ bubbles2 } className="bubblegroup2"  />
+		<img src={ bubbles3 } className="bubblegroup3"  />
+		<img src={ ic } className="ic"  />
+		<img src= { elevator } className="elevator" />
+		<img src= { flag } className="flag" />
+		<img src= { wave } className="wave" />
+		<img src= { wave } className="wave2" />
+		<img src= { guitarist } className="guitarist" />
+		<img src= { swing } className="swing" />
+		<img src = { tree1 } className="tree1"/>
+		<img src = { tree2 } className="tree2"/>
+		<img src = { tree3 } className="tree3"/>
+		<img src = { tree4 } className="tree4"/>
+		<img src = { tree4 } className="tree5"/>
+		<img src = { tree2 } className="tree6"/>
+	</div>
+);
 
-class Background extends Component {
-	constructor(props) {
-		super(props);
-
-		this.state = {
-			time: Date.now(),
-            endpoint: "http://127.0.0.1:4001",
-			keyboardInput: ""
-        };
-	};
-
-	componentDidMount() {
-		this.interval = setInterval(() => {
-			this.props.fetchWeather();
-			this.setState({
-				time: Date.now()
-			});
-		}, 3600000); // fetch weather every 1 hour, should change to shorter interval if testing
-	}
-
-	// for testing
-    componentWillMount() {
-		this.props.fetchWeather();
-        // window.addEventListener('keydown', this.handleKeyboardInput.bind(this));
-	}
-	
-	componentWillUnmount() {
-		clearInterval(this.interval);
-	}
-
-    // for testing
-    // handleKeyboardInput = event => {
-    //     if (event.key == "Enter") {
-    //         this.props.fetchWeather();
-    //         this.setState({
-    //             keyboardInput: ""
-    //         });
-    //     } else if (event.key == "Backspace") {
-    //         this.setState({
-    //             keyboardInput: ""
-    //         });
-    //     } else {
-    //         this.setState({
-    //             keyboardInput: this.state.keyboardInput + event.key
-    //         });
-    //     };
-    // };
-
-	render() {
-		return (
-			<div >
-				<ReactRain numDrops={this.props.currWeather} />
-				<img src={ landscape_img } className="artboard-background"  />
-				<img src={ bubbles1 } className="bubblegroup1"  />
-				<img src={ bubbles2 } className="bubblegroup2"  />
-				<img src={ bubbles3 } className="bubblegroup3"  />
-				<img src={ ic } className="ic"  />
-				<img src= { elevator } className="elevator" />
-				<img src= { flag } className="flag" />
-				<img src= { wave } className="wave" />
-				<img src= { wave } className="wave2" />
-				<img src= { guitarist } className="guitarist" />
-				<img src= { swing } className="swing" />
-				<img src = { tree1 } className="tree1"/>
-				<img src = { tree2 } className="tree2"/>
-				<img src = { tree3 } className="tree3"/>
-				<img src = { tree4 } className="tree4"/>
-				<img src = { tree4 } className="tree5"/>
-				<img src = { tree2 } className="tree6"/>
-			</div>
-		);
-	};
-};
-
-const mapStateToProps = (state) => {
-	console.log(state);
-    return {
-        currWeather: state.weather
-    };
-}
-
-export default connect(mapStateToProps, { fetchWeather })(Background);
+export default Background;

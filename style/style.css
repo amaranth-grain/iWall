@@ -216,6 +216,102 @@ body {
    left: 39.36%;
    width: 31px;
 }
+
+.cueSat{
+   position: absolute;
+   top: 13%;
+   left: 21.9%;
+   /* -webkit-animation-delay: -20s;
+   animation-delay: -20s; */
+}
+
+.cueDshop{
+   position: absolute;
+   top: 77%;
+   left: 10%;
+   /* -webkit-animation-delay: -10s;
+   animation-delay: -10s; */
+   -webkit-animation-delay: -4s;
+   animation-delay: -4s;
+}
+
+.cueMessage{
+   position: absolute;
+   top: 67.4%;
+   left: 43.7%;
+   /* -webkit-animation-delay: -15s;
+   animation-delay: -15s; */
+   -webkit-animation-delay: -8s;
+   animation-delay: -8s;
+}
+
+.cueHeart{
+   position: absolute;
+   top: 68%;
+   left: 80.05%;
+   /* -webkit-animation-delay: -5s;
+   animation-delay: -5s; */
+   -webkit-animation-delay: -12s;
+   animation-delay: -12s;
+}
+
+.cueSAC{
+   position: absolute;
+   top: 15%;
+   left: 76%;
+   -webkit-animation-delay: -16s;
+   animation-delay: -16s;
+}
+
+/* TESTING */
+.fadein img {
+   /* visibility: hidden; */
+   -webkit-animation-name: wiggleFade;
+   -webkit-animation-iteration-count: infinite;
+   -webkit-animation-duration: 9s;
+   animation-name: wiggleFade;
+   animation-iteration-count: infinite;
+   animation-duration: 20s;
+}
+
+@keyframes wiggleFade {
+   0% {opacity: 0;}
+   40% {opacity: 0;}
+   41% {opacity: 1;}
+   44% {-webkit-transform: scale(1);}
+   45% {-webkit-transform: scale(0.8);}
+   46% {-webkit-transform: scale(1.2);}
+   47% {-webkit-transform: scale(0.8);}
+   48% {-webkit-transform: scale(1.2);}
+   49% {-webkit-transform: scale(0.8);}
+   50% {-webkit-transform: scale(1.2);}
+   51% {-webkit-transform: scale(0.8);}
+   52% {-webkit-transform: scale(1);}
+   59% { opacity: 1;}
+   60% { opacity: 0;}
+ 100% { opacity: 0;}
+}
+/* TESTING */
+
+
+/* .cue {
+   visibility: hidden;
+   animation-name: fade;
+   animation-iteration-count: infinite;
+   animation-duration: 25s;
+   -webkit-animation-name: fade;
+   -webkit-animation-iteration-count: infinite;
+   -webkit-animation-duration: 25s;
+} */
+@keyframes fade {
+   0% {opacity: 0;}
+   38% {opacity: 0;}
+   40% {opacity: 1;}
+   52% {opacity: 1;}
+   55% {opacity: 0;}
+   100% {opacity: 0;}
+}
+
 @keyframes cloud-drift1 {
    0%   {left:30.2%; top:14.8%;}
    50%  {left:50.2%; top:14.8%;}
@@ -330,12 +426,10 @@ img.individual-item.hide {
 /*Tree: SAP Intern Committee / Spring into Service */
 .img3 {
    position: absolute;
-   left: 35.7%;
-   top: 28.74%;
-   width: 12.1%;
-   background-color: white;
-   padding-left: 19px;
-   padding-bottom: 69px;
+   left: 39%;
+   top: 7%;
+   width: 10%;
+   background-color: #ffffff00;
    /* opacity: 0.9; */
 }
 /*Toastmasters / Megaphone */

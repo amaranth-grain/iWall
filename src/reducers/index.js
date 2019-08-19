@@ -29,18 +29,6 @@ const mapToCheck = {
 	img24: ["img16"]
 }
 
-// range of drops b/w 0-100
-const weatherCodes = {
-    "Thunderstorm": 80,
-    "Drizzle": 20,
-    "Rain": 40,
-    "Snow": 40,
-    "Atmosphere": 0,
-    "Clear": 0,
-    "Clouds": 40
-
-}
-
 const animations = [
     "img0", "img1", "img2", "img3", "img4", "img5", "img6", "img7", "img8", "img9", "img10", "img11", "img12", "img13", "img14", "img15", "img16",
     "img17", "img18", "img19", "img20", "img21", "img22", "img23", "img24"
@@ -96,8 +84,13 @@ const cloudsReducer = (clouds = [true, true], action) => {
     return clouds;
 };
 
-const currAnimationsReducer = (currAnimations = { currAnimations: [], currAnimationNames: [] }, action) => {
-    // console.log(action.payload);
+const currAnimationsReducer = (
+    currAnimations = { 
+        currAnimations: [], 
+        currAnimationNames: [],
+        showCues: true 
+    },
+    action) => {
     if (action.type === 'ANIMATION_SELECTED') {
         const animation = action.payload.selectedAnimation;
         const namesToCheck = (mapToCheck[animation.imageName] === undefined) ? []: mapToCheck[animation.imageName];
@@ -106,9 +99,6 @@ const currAnimationsReducer = (currAnimations = { currAnimations: [], currAnimat
         if (animation.imageName === "img16" && currAnimations.currAnimations.length !== 0) {
             return currAnimations;
         }
-
-        // console.log(namesToCheck);
-        // console.log(currAnimations.currAnimationNames);
 
         // check for collisions
         for (var i = 0; i < namesToCheck.length; i++) {
@@ -125,11 +115,10 @@ const currAnimationsReducer = (currAnimations = { currAnimations: [], currAnimat
             return currAnimations;
         }
 
-        console.log("Passed");
-
         return {
           currAnimations: [... action.payload.currAnimations, animation],
-          currAnimationNames: [... action.payload.currAnimationNames, animation.imageName]
+          currAnimationNames: [... action.payload.currAnimationNames, animation.imageName],
+          showCues: false
         };
     }
     
@@ -141,28 +130,17 @@ const currAnimationsReducer = (currAnimations = { currAnimations: [], currAnimat
 
         return {
             currAnimations: newAnimations,
-            currAnimationNames: newAnimationNames
+            currAnimationNames: newAnimationNames,
+            showCues: true
         }
     }
 
     return currAnimations;
 };
 
-const weatherReducer = (currWeather = 0, action) => {
-    // console.log(action.payload.data);
-
-    if (action.type === "FETCH_WEATHER") {
-        // console.log("Weather: " + action.payload.data.weather[0].main);
-        console.log(weatherCodes[action.payload.data.weather[0].main]);
-        return weatherCodes[action.payload.data.weather[0].main];
-    }
-
-    return currWeather;
-}
-
 export default combineReducers({
     animations: animationsReducer,
     currAnimations: currAnimationsReducer,
     clouds: cloudsReducer,
-    weather: weatherReducer
+    cues: currAnimationsReducer
 });
